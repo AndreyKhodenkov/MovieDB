@@ -1,0 +1,60 @@
+<div class="main_block">
+
+  <div class="top_navigation">
+    <div class="logo">
+     <a href="">Movie DB</a>
+    </div>
+   <div class="nav-bar">
+      <ul>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">TV</a></li>
+        <li><a href="#">Companies</a></li>
+        <li><a href="#">People</a></li>
+      </ul>
+    </div>
+    <div class="search">
+      <input type="text" class="input" placeholder="search...">
+    </div>
+  </div>
+
+
+  <div class="header_content">
+    <div class="movie">
+      <div class="category">Most Popular Movies</div>
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let item of movieAraay">
+          <div class="picsum-img-wrapper">
+            <img [src]="item.poster" alt="Random first slide">
+          </div>
+          <div class="title_name">{{item.title}}</div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+
+
+
+    <div class="movie">
+      <div class="tv">Popular TV</div>
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let item of arrayTv">
+          <div class="picsum-img-wrapper">
+            <img [src]="item.backdrop" alt="Random first slide">
+          </div>
+          <div class="nameTv">{{item.name}}</div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+
+    <div class="movie">
+      <div class="playing">Now Playing</div>
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let item of arrayPlaying">
+          <div class="picsum-img-wrapper">
+            <img [src]="item.backdrop" alt="Random first slide">
+          </div>
+          <div class="namePlaying">{{item.name}}</div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</div>
