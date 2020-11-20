@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 *{
   box-sizing: border-box;
   margin: 0;
@@ -5,8 +6,8 @@
 }
 html, body{
   height: 100%;
-  background:/*linear-gradient(20deg, rgba(71, 2, 2, 0.39), rgba(69, 3, 95, 0.39)),*/url("image/pexels-tim-mossholder-3612932.jpg");
   background-size: cover;
+  background-position: top;
   color: aliceblue;
 }
 .main{
@@ -17,7 +18,6 @@ html, body{
   justify-content: space-between;
   .header{
    width: 100%;
-   height:450px;
   }
 }
 

@@ -17,5 +17,8 @@ export class ServicesService {
   getApiNowPlaying(){
     return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&language=en-US&page=1`)
   }
+  getPopularPerson(){
+    return this.http.get(`https://api.themoviedb.org/3/person/popular?api_key=${this.apiKey}&language=en-US&page=1`)
+  }
 
 }

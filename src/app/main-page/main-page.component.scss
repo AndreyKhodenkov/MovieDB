@@ -1,0 +1,18 @@
+.main_block{
+  width: 100%;
+
+  .popular_actor{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    .actor{
+      margin: 5px;
+      img{
+        width: 200px;
+        border-radius: 5px;
+      }
+    }
+  }
+}

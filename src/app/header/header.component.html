@@ -1,9 +1,5 @@
 <div class="main_block">
-
   <div class="top_navigation">
-    <div class="logo">
-     <a href="">Movie DB</a>
-    </div>
    <div class="nav-bar">
       <ul>
         <li><a href="#">Movies</a></li>
@@ -16,45 +12,24 @@
       <input type="text" class="input" placeholder="search...">
     </div>
   </div>
-
-
-  <div class="header_content">
-    <div class="movie">
-      <div class="category">Most Popular Movies</div>
-      <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let item of movieAraay">
-          <div class="picsum-img-wrapper">
-            <img [src]="item.poster" alt="Random first slide">
-          </div>
-          <div class="title_name">{{item.title}}</div>
-        </ng-template>
-      </ngb-carousel>
+  <ngb-carousel class="carousel">
+  <ng-template ngbSlide *ngFor="let item of movieAraay">
+    <div class="description">
+      <div class="title_name">{{item.title}}</div>
+      <div class="overview">{{item.overview}}</div>
+      <div class="release">
+        <h3>Date release</h3>
+        {{item.release}}
+      </div>
+      <div class="vote">
+        <h3>Vote</h3>
+        <p><ngb-progressbar [showValue]="true" type="primary" [value]="item.vote" [max]="10"></ngb-progressbar></p>
+      </div>
     </div>
-
-
-
-    <div class="movie">
-      <div class="tv">Popular TV</div>
-      <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let item of arrayTv">
-          <div class="picsum-img-wrapper">
-            <img [src]="item.backdrop" alt="Random first slide">
-          </div>
-          <div class="nameTv">{{item.name}}</div>
-        </ng-template>
-      </ngb-carousel>
+    <div class="picsum-img-wrapper">
+      <img [src]="item.poster" alt="">
     </div>
-
-    <div class="movie">
-      <div class="playing">Now Playing</div>
-      <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let item of arrayPlaying">
-          <div class="picsum-img-wrapper">
-            <img [src]="item.backdrop" alt="Random first slide">
-          </div>
-          <div class="namePlaying">{{item.name}}</div>
-        </ng-template>
-      </ngb-carousel>
-    </div>
-  </div>
+  </ng-template>
+</ngb-carousel>
 </div>
+
