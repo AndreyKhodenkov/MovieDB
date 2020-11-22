@@ -1,6 +1,17 @@
 .main_block{
   width: 100%;
-
+ .most_popular{
+   width: 90%;
+   text-align: center;
+   border-radius: 10px;
+   box-shadow: 1px 0px 10px #23b29570;
+   padding: 10px;
+   margin: 10px auto;
+   h3{
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
+   }
+ }
   .popular_actor{
     width: 100%;
     display: flex;
@@ -8,9 +19,20 @@
     justify-content: space-evenly;
     margin-top: 10px;
     .actor{
-      margin: 5px;
+      border: 1px solid #11b093;
+      box-shadow: 0px 1px 1px 1px rgb(148, 199, 189);
+      width: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 5px;
+      padding: 5px;
+      color: #11b093;
+      text-align: center;
+      background-color: rgb(255, 255, 255);
       img{
-        width: 200px;
+        width: 120px;
         border-radius: 5px;
       }
     }

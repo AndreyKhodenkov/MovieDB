@@ -1,13 +1,14 @@
 <div class="main_block">
-  <h3>Most Popular Actors</h3>
-  <div class="popular_actor">
-    <div class="actor" *ngFor='let item of personArray'>
-      <img [src]='item.image' alt="">
-      
-      <div class="name">{{item.name}}</div>
-      <div class="popularity">
-        <p>Popularity: {{item.popularity}}</p>
-        <p><ngb-progressbar [showValue]="true" type="warning" [value]="item.popularity" [max]="100000"></ngb-progressbar></p>
+  <div class="most_popular">
+    <h3>Most Popular Actors</h3>
+    <div class="popular_actor">
+      <div class="actor" *ngFor='let item of personArray'>
+        <img [src]='item.image' alt="">
+        <div class="name">{{item.name}}</div>
+        <div class="popularity">
+          <p>Popularity: {{item.popularity}}</p>
+          <p><ngb-progressbar [showValue]="true" type="warning" [value]="item.popularity" [max]="100000"></ngb-progressbar></p>
+        </div>
       </div>
     </div>
   </div>
