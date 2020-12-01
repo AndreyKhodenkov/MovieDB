@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 
+
 export class ServicesService {
   apiKey = '7e22234f7aa6e5fa3b5bb4f22ab56eab'
   constructor(private http: HttpClient) { }
@@ -20,5 +21,8 @@ export class ServicesService {
   getPopularPerson(){
     return this.http.get(`https://api.themoviedb.org/3/person/popular?api_key=${this.apiKey}&language=en-US&page=1`)
   }
+  getTranding(){
+      return this.http.get(`https://api.themoviedb.org/3/trending/all/?api_key=${this.apiKey}`)
+    }
 
 }

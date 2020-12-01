@@ -8,8 +8,29 @@
         <div class="popularity">
           <p>Popularity: {{item.popularity}}</p>
           <p><ngb-progressbar [showValue]="true" type="warning" [value]="item.popularity" [max]="100000"></ngb-progressbar></p>
-        </div>
       </div>
     </div>
   </div>
 </div>
+<div class="another_movie">
+  <div class="nowPlaying">
+    <h3>now playing</h3>
+    <div class="playing">
+      <div class="movie" *ngFor="let item of nowPlayingArray">
+        <img [src]='item.image' alt="">
+        <div class="title">{{item.name}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="tv">
+    <h3>Popular TV</h3>
+    <div class="playing">
+      <div class="movie" *ngFor='let item of tvArray'>
+        <img [src]='item.image' alt="">
+        <div class="title">{{item.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

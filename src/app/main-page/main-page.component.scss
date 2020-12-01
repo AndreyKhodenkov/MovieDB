@@ -1,5 +1,9 @@
 .main_block{
   width: 100%;
+  h3{
+    font-family: 'Varela Round', sans-serif;
+    text-transform: uppercase;
+   }
  .most_popular{
    width: 90%;
    text-align: center;
@@ -7,10 +11,7 @@
    box-shadow: 1px 0px 10px #23b29570;
    padding: 10px;
    margin: 10px auto;
-   h3{
-    font-family: 'Varela Round', sans-serif;
-    text-transform: uppercase;
-   }
+
  }
   .popular_actor{
     width: 100%;
@@ -35,6 +36,24 @@
         width: 120px;
         border-radius: 5px;
       }
+    }
+  }
+
+  .another_movie{
+    margin: 20px auto;
+    display: flex;
+    width: 90%;
+    text-align: center;
+    text-transform: uppercase;
+    img, .movie{
+      margin: 2px;
+      width: 170px;
+    }
+    .playing{
+      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 }
