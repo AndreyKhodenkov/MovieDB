@@ -1,23 +1,15 @@
 <div class="main_block">
-  <div class="most_popular">
-    <h3>Most Popular Actors</h3>
-    <div class="popular_actor">
-      <div class="actor" *ngFor='let item of personArray'>
-        <img [src]='item.image' alt="">
-        <div class="name">{{item.name}}</div>
-        <div class="popularity">
-          <p>Popularity: {{item.popularity}}</p>
-          <p><ngb-progressbar [showValue]="true" type="warning" [value]="item.popularity" [max]="100000"></ngb-progressbar></p>
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="another_movie">
   <div class="nowPlaying">
     <h3>now playing</h3>
     <div class="playing">
       <div class="movie" *ngFor="let item of nowPlayingArray">
         <img [src]='item.image' alt="">
+        <div class="vote">
+          <i class="fas fa-star"></i>
+          {{item.vote}}
+        </div>
         <div class="title">{{item.name}}</div>
       </div>
     </div>
@@ -27,10 +19,27 @@
     <div class="playing">
       <div class="movie" *ngFor='let item of tvArray'>
         <img [src]='item.image' alt="">
+        <div class="vote">
+          {{item.vote}}
+          <i class="fas fa-star"></i>
+        </div>
         <div class="title">{{item.name}}</div>
       </div>
     </div>
   </div>
+</div>
+<div class="most_popular">
+  <h3>Most Popular Actors</h3>
+  <div class="popular_actor">
+    <div class="actor" *ngFor='let item of personArray'>
+      <img [src]='item.image' alt="">
+      <div class="name">{{item.name}}</div>
+      <div class="popularity">
+        <p>Popularity: {{item.popularity}}</p>
+        <p><ngb-progressbar [showValue]="true" type="warning" [value]="item.popularity" [max]="100000"></ngb-progressbar></p>
+    </div>
+  </div>
+</div>
 </div>
 </div>
 
