@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { SwiperConfigInterface } from 'ngx-swiper-wrapper/public-api';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesService } from '../services.service';
+
 
 @Component({
   selector: 'app-main-page',
@@ -29,7 +30,6 @@ export class MainPageComponent implements OnInit {
   nowPlayingImage
   nowVote
   nowPlayingArray = []
-
   itemTv
   tvResults
   tvName
@@ -37,18 +37,36 @@ export class MainPageComponent implements OnInit {
   tvImage
   tvVote
   tvArray = []
+  toogle = true
+  trandDayItem
+  trandDayResults
+  trandDayElement
+  trandDayArray = []
+  trandWeekItem
+  trandWeekResults
+  trandWeekElement
+  trandWeekArray = []
+
+    // customize default values of ratings used by this component tree
 
  constructor(private apiLink: ServicesService,
-              private http: HttpClient
-              ) { }
+              private http: HttpClient,
+              config: NgbRatingConfig
+            ) {
+              config.max = 10;
+              config.readonly = true;
+
+            }
+
   ngOnInit(): void {
+
     this.apiLink.getPopularPerson()
     .subscribe(item=>{
       this.item = item
       this.result = this.item.results
       this.result.forEach(element => {
         this.name = element.name
-        this.popularity = element.popularity*1000
+        this.popularity = Math.floor(element.popularity*1000)
         this.movies = element.known_for
         this.image = element.profile_path
         this.personId = element.id
@@ -60,8 +78,10 @@ export class MainPageComponent implements OnInit {
             movie:this.movies,
             id:this.personId
           }
-          )
+        )
           this.personArray.splice(9,10)
+          console.log(this.personArray);
+
         });
     })
     this.apiLink.getApiNowPlaying()
@@ -90,8 +110,26 @@ export class MainPageComponent implements OnInit {
         this.tvArray.push(
           {name:this.tvName,id:this.tvId,image:this.linkImage + this.tvImage,vote:this.tvVote}
           )
-
         });
+    })
+    this.apiLink.getTrandingDay()
+    .subscribe(item=>{
+      this.trandDayItem = item
+      this.trandDayResults = this.trandDayItem.results
+      this.trandDayResults.forEach(element => {
+        this.trandDayElement = element
+        this.trandDayArray.push(this.trandDayElement)
+      });
+    })
+    this.apiLink.getTrandingWeek()
+    .subscribe(item=>{
+      this.trandWeekItem = item
+      this.trandWeekResults = this.trandWeekItem.results
+      this.trandWeekResults.forEach(element => {
+        this.trandWeekElement = element
+        this.trandWeekArray.push(this.trandWeekElement)
+
+      });
     })
   }
 }

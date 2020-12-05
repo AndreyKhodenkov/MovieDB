@@ -1,5 +1,32 @@
 <div class="main_block">
-
+  <div class="trand">
+    <div class="button">
+      <button (click)='toogle=true'>Week</button>
+      <button (click)='toogle=false'>Day</button>
+    </div>
+    <div class="movie_tranding">
+    <div class="movies" *ngIf='toogle'>
+      <div class="poster" *ngFor="let item of trandDayArray">
+        <img [src]="linkImage + item.poster_path" alt="">
+        <div class="description">
+          <div class="title">{{item.title}}{{item.original_name}}</div>
+          <div class="vote">{{item.vote_average}}</div>
+          <ngb-rating [rate]="item.vote_average"></ngb-rating>
+        </div>
+      </div>
+    </div>
+    <div class="movies" *ngIf='!toogle'>
+      <div class="poster" *ngFor="let item of trandWeekArray">
+        <img [src]="linkImage + item.poster_path" alt="">
+        <div class="description">
+          <div class="title">{{item.title}}</div>
+          <div class="vote">{{item.vote_average}}</div>
+          <ngb-rating [rate]="item.vote_average"></ngb-rating>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
 <div class="another_movie">
   <div class="nowPlaying">
     <h3>now playing</h3>
