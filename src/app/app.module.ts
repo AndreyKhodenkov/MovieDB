@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainPageComponent
+    MainPageComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,

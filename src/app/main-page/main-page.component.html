@@ -1,5 +1,9 @@
+<app-header></app-header>
 <div class="main_block">
   <div class="trand">
+    <div class="title">
+      <h3>In Trend</h3>
+    </div>
     <div class="button">
       <button (click)='toogle=true'>Week</button>
       <button (click)='toogle=false'>Day</button>
@@ -7,7 +11,7 @@
     <div class="movie_tranding">
     <div class="movies" *ngIf='toogle'>
       <div class="poster" *ngFor="let item of trandDayArray">
-        <img [src]="linkImage + item.poster_path" alt="">
+        <img [routerLink]="['/movie',item.id]" [src]="linkImage + item.poster_path" alt="">
         <div class="description">
           <div class="title">{{item.title}}{{item.original_name}}</div>
           <div class="vote">{{item.vote_average}}</div>
@@ -17,7 +21,7 @@
     </div>
     <div class="movies" *ngIf='!toogle'>
       <div class="poster" *ngFor="let item of trandWeekArray">
-        <img [src]="linkImage + item.poster_path" alt="">
+        <img [routerLink]="['/movie',item.id]" [src]="linkImage + item.poster_path" alt="">
         <div class="description">
           <div class="title">{{item.title}}</div>
           <div class="vote">{{item.vote_average}}</div>
@@ -27,12 +31,12 @@
     </div>
     </div>
   </div>
-<div class="another_movie">
+<div #h class="another_movie">
   <div class="nowPlaying">
-    <h3>now playing</h3>
+    <h3 >now playing</h3>
     <div class="playing">
       <div class="movie" *ngFor="let item of nowPlayingArray">
-        <img [src]='item.image' alt="">
+        <img [routerLink]="['/movie',item.id]" [src]='item.image' alt="">
         <div class="vote">
           <i class="fas fa-star"></i>
           {{item.vote}}
@@ -45,7 +49,7 @@
     <h3>Popular TV</h3>
     <div class="playing">
       <div class="movie" *ngFor='let item of tvArray'>
-        <img [src]='item.image' alt="">
+        <img [routerLink]="['/movie',item.id]" [src]='item.image' alt="">
         <div class="vote">
           {{item.vote}}
           <i class="fas fa-star"></i>

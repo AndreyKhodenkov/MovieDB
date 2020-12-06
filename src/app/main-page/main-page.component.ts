@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, OnInit } from '@angular/core';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesService } from '../services.service';
 
@@ -10,7 +10,7 @@ import { ServicesService } from '../services.service';
   styleUrls: ['./main-page.component.scss']
 
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit{
   item
   result = []
   personArray = []
@@ -46,20 +46,14 @@ export class MainPageComponent implements OnInit {
   trandWeekResults
   trandWeekElement
   trandWeekArray = []
-
-    // customize default values of ratings used by this component tree
-
  constructor(private apiLink: ServicesService,
               private http: HttpClient,
               config: NgbRatingConfig
             ) {
               config.max = 10;
               config.readonly = true;
-
             }
-
   ngOnInit(): void {
-
     this.apiLink.getPopularPerson()
     .subscribe(item=>{
       this.item = item
@@ -80,8 +74,6 @@ export class MainPageComponent implements OnInit {
           }
         )
           this.personArray.splice(9,10)
-          console.log(this.personArray);
-
         });
     })
     this.apiLink.getApiNowPlaying()
@@ -94,7 +86,7 @@ export class MainPageComponent implements OnInit {
           this.nowPlayingImage = element.poster_path
           this.nowVote = element.vote_average
           this.nowPlayingArray.push(
-            {name:this.nowPlayingTitle,d:this.nowPlayingId,image:this.linkImage + this.nowPlayingImage,vote:this.nowVote}
+            {name:this.nowPlayingTitle,id:this.nowPlayingId,image:this.linkImage + this.nowPlayingImage,vote:this.nowVote}
           )
         });
     })
@@ -128,7 +120,6 @@ export class MainPageComponent implements OnInit {
       this.trandWeekResults.forEach(element => {
         this.trandWeekElement = element
         this.trandWeekArray.push(this.trandWeekElement)
-
       });
     })
   }

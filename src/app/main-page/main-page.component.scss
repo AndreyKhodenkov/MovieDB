@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 .main_block{
+  margin-top: 50px;
   width: 100%;
   h3{
     //font-family: 'Varela Round', sans-serif;
@@ -96,36 +97,65 @@
   .button{
     text-align: center;
     button{
-      width: 100px;
+      width: 150px;
       margin: 5px;
       padding: 5px;
-      background: linear-gradient(#0056ff, #033255);
+      background:linear-gradient(#096260d1, #07857cba);
+      letter-spacing: 2px;
+      text-transform: uppercase;
       border: none;
       outline: none;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 10px;
       font-family: 'Righteous', cursive;
       color: #ffffff;
     }
   }
+
   .movies{
     ngb-rating{
       color: #0f12d9;
-      font-size: 18px;
+      font-size: 22px;
     }
     margin: 0 auto;
     width: 90%;
     display: flex;
     overflow-x: auto;
+    border-radius: 10px;
     .poster{
       margin: 5px;
-      background:linear-gradient(#0dc9aa, #ffffff);
+      //background:linear-gradient(#0dc9aa, #ffffff);
       border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     img{
      border-radius: 10px;
-     width: 200px;
+     width: 250px;
    }
+ }
+ .description{
+  // margin-top:-80px ;
+    .title{
+      text-transform: uppercase;
+      color: #256354;
+      font-size: 16px;
+      text-align: center;
+      font-family: 'Varela Round', sans-serif;
+    }
+    .vote{
+      border-radius: 10px;
+      font-weight: bold;
+      padding: 5px;
+      background: linear-gradient(90deg,#11b093,#ffffff);
+      color: yellow;
+    }
+ }
+ .title{
+  h3{
+    text-align: center;
+  }
  }
 }
 

@@ -27,4 +27,9 @@ export class ServicesService {
   getTrandingWeek(){
     return this.http.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${this.apiKey}`)
   }
+  getMovieDetail(id){
+    console.log(id);
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.apiKey}&language=en-US`)
+
+  }
 }
