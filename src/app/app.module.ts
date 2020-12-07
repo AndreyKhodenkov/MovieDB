@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { ColorDirective } from './color.directive';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     HeaderComponent,
     FooterComponent,
     MainPageComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    ColorDirective
   ],
   imports: [
     BrowserModule,
