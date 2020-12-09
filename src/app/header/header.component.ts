@@ -23,7 +23,7 @@ export class HeaderComponent{
   releaseDate
   popularity
   voteAverage
-
+  id
   constructor(private apiLink: ServicesService,
               private http: HttpClient) { }
 
@@ -40,13 +40,15 @@ export class HeaderComponent{
         this.releaseDate = this.releaseDate.split('-').join('.')
         this.popularity = element.popularity*1000
         this.voteAverage = element.vote_average
+        this.id = element.id
         this.movieAraay.push(
           {title:this.title,
           poster:this.linkPoster + this.poster,
           overview:this.overview,
           release:this.releaseDate,
           popularity:this.popularity,
-          vote:this.voteAverage
+          vote:this.voteAverage,
+          id:this.id
         })
       });
     })

@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div class="main_block">
   <div class="trand">
     <div class="title">
@@ -49,7 +48,7 @@
     <h3>Popular TV</h3>
     <div class="playing">
       <div class="movie" *ngFor='let item of tvArray'>
-        <img [routerLink]="['/movie',item.id]" [src]='item.image' alt="">
+        <img [routerLink]="['/tv-detail',item.id]" [src]='item.image' alt="">
         <div class="vote">
           {{item.vote}}
           <i class="fas fa-star"></i>
@@ -74,3 +73,4 @@
 </div>
 </div>
 
+<router-outlet><router-outlet>

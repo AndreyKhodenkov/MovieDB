@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { ColorDirective } from './color.directive';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { DetailTvComponent } from './detail-tv/detail-tv.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     FooterComponent,
     MainPageComponent,
     MovieDetailComponent,
-    ColorDirective
+    ColorDirective,
+    DetailTvComponent
   ],
   imports: [
     BrowserModule,

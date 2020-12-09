@@ -10,12 +10,26 @@ import { ServicesService } from '../services.service';
 })
 export class MovieDetailComponent implements OnInit {
   linkYouTube = 'https://www.youtube.com/embed/'
+  linkImage = 'https://image.tmdb.org/t/p/original/'
   trailerResults
   itemTrailer
   tralerLinkArray
   trailerKey
   linkTrailer
   videoUrl
+  movieItem
+  title
+  image
+  date
+  backdrop
+  overview
+  productionCoutry
+  productionCompany
+  homepage
+  spoken
+  revenue
+  vote
+  toogle = true;
   constructor(private route: ActivatedRoute,
               private service: ServicesService,
               private safeVideo: DomSanitizer)
@@ -25,8 +39,19 @@ export class MovieDetailComponent implements OnInit {
     this.route.params.subscribe((params:Params)=>{
       this.service.getMovieDetail(params.id)
       .subscribe(item=>{
-
-
+        console.log(item);
+        this.movieItem = item
+        this.title = this.movieItem.title
+        this.image = this.linkImage + this.movieItem.poster_path
+        this.date = this.movieItem.release_date
+        this.backdrop = this.linkImage + this.movieItem.backdrop_path
+        this.overview = this.movieItem.overview
+        this.productionCoutry = this.movieItem.production_countries[0].name
+        this.productionCompany = this.movieItem.production_companies[0].name
+        this.homepage = this.movieItem.homepage
+        this.spoken = this.movieItem.spoken_languages[0].name
+        this.revenue = this.movieItem.revenue
+        this.vote = this.movieItem.vote_average
       })
       this.service.getTrailer(params.id)
       .subscribe(item=>{
@@ -34,7 +59,7 @@ export class MovieDetailComponent implements OnInit {
         this.trailerResults = this.itemTrailer.results
         this.tralerLinkArray = this.trailerResults[0]
         this.trailerKey = this.tralerLinkArray.key
-        this.linkTrailer = this.linkYouTube + this.trailerKey
+        this.linkTrailer = this.linkYouTube + this.trailerKey + '?controls=0&iv_load_policy=3&autoplay=1&mute=1&'
         this.videoUrl = this.safeVideo.bypassSecurityTrustResourceUrl(this.linkTrailer)
       })
     })

@@ -33,4 +33,7 @@ export class ServicesService {
   getTrailer(id){
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.apiKey}&language=en-US`)
   }
+  getTvDetail(id){
+    return this.http.get(`https://api.themoviedb.org/3/tv/${id}?api_key=${this.apiKey}language=en-US`)
+  }
 }

@@ -2,6 +2,7 @@
   <div class="top_navigation">
    <div class="nav-bar">
       <ul>
+        <li><a href="#">Home Page</a></li>
         <li><a href="#">Movies</a></li>
         <li><a href="#">TV</a></li>
         <li><a href="#">Companies</a></li>
@@ -25,9 +26,10 @@
         <h3>Vote</h3>
         <p><ngb-progressbar [showValue]="true" type="primary" [value]="item.vote" [max]="10"></ngb-progressbar></p>
       </div>
+      <button [routerLink]="['/movie',item.id]">Watch</button>
     </div>
     <div class="picsum-img-wrapper">
-      <img [src]="item.poster" alt="">
+      <img [src]="item.poster" alt="" >
     </div>
   </ng-template>
 </ngb-carousel>
