@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 .main_block{
   margin-top: 50px;
+  overflow: show;
   width: 100%;
   h3{
     font-family: 'Righteous', cursive;
@@ -116,6 +117,7 @@
       color: #0f12d9;
       font-size: 22px;
     }
+    position: relative;
     margin: 0 auto;
     width: 90%;
     display: flex;
@@ -123,7 +125,6 @@
     border-radius: 10px;
     .poster{
       margin: 5px;
-      //background:linear-gradient(#0dc9aa, #ffffff);
       border-radius: 10px;
       display: flex;
       flex-direction: column;
@@ -135,7 +136,6 @@
    }
  }
  .description{
-  // margin-top:-80px ;
     .title{
       text-transform: uppercase;
       color: #256354;

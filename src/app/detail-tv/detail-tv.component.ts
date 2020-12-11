@@ -9,13 +9,58 @@ import { ServicesService } from '../services.service';
 })
 export class DetailTvComponent implements OnInit {
 
+  linkYouTube = 'https://www.youtube.com/embed/'
+  linkImage = 'https://image.tmdb.org/t/p/original/'
+  trailerResults
+  itemTrailer
+  tralerLinkArray
+  trailerKey
+  linkTrailer
+  videoUrl
+  tvItem
+  title
+  image
+  date
+  backdrop
+  overview
+  productionCoutry
+  productionCompany
+  homepage
+  spoken
+  revenue
+  vote
+  toogle = true;
+
   constructor(private rote:ActivatedRoute,
               private service:ServicesService) { }
 
   ngOnInit(): void {
     this.rote.params.subscribe((params:Params)=>{
-      console.log(params);
+      this.service.getTvDetail(params.id)
+      .subscribe(item=>{
+        console.log(item);
+
+        this.tvItem = item
+        this.title = this.tvItem.name
+        this.image = this.linkImage + this.tvItem.poster_path
+        this.date = this.tvItem.release_date
+        this.backdrop = this.linkImage + this.tvItem.backdrop_path
+        this.overview = this.tvItem.overview
+        this.productionCoutry = this.tvItem.production_countries[0].name
+        this.productionCompany = this.tvItem.production_companies[0].name
+        this.homepage = this.tvItem.homepage
+        this.spoken = this.tvItem.spoken_languages[0].name
+        this.revenue = this.tvItem.revenue
+        this.vote = this.tvItem.vote_average
+
+        this.service.getTrailer(params.id)
+      .subscribe(item=>{
+        this.itemTrailer = item
+        this.trailerResults = this.itemTrailer.results
+        this.tralerLinkArray = this.trailerResults[0]
+        this.trailerKey = this.tralerLinkArray.key
+      })
+      })
     })
   }
-
 }
