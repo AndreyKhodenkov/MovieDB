@@ -46,8 +46,8 @@ export class MovieDetailComponent implements OnInit {
         this.date = this.movieItem.release_date
         this.backdrop = this.linkImage + this.movieItem.backdrop_path
         this.overview = this.movieItem.overview
-        this.productionCoutry = this.movieItem.production_countries[0].name
-        this.productionCompany = this.movieItem.production_companies[0].name
+        this.productionCoutry = this.movieItem.production_countries[0]; this.productionCoutry = this.productionCoutry.name
+        this.productionCompany = this.movieItem.production_companies[0];this.productionCompany = this.productionCoutry.name
         this.homepage = this.movieItem.homepage
         this.spoken = this.movieItem.spoken_languages[0].name
         this.revenue = this.movieItem.revenue

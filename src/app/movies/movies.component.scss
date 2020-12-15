@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+.main{
+  .movies{
+    font-family: 'Baloo 2', cursive;
+    width: 90%;
+    margin: 0 auto;
+    .movie{
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.397);
+      margin-bottom: 20px;
+      display: flex;
+      .img{
+        position: relative;
+        .vote{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: rgb(255, 255, 255);
+          color: rgb(1, 143, 112);
+          border-radius: 20px;
+          width: 60px;
+          font-size: 18px;
+          i{
+            margin: 0 5px;
+            font-size: 18px;
+            color: yellow;
+          }
+        }
+        img{
+          width: 250px;
+        }
+      }
+      .description{
+        padding: 20px;
+        width: 100%;
+        margin-left: 10px;
+        .title{
+          font-size: 40px;
+          margin-bottom: 50px;
+        }
+        .date{
+          opacity: 0.6;
+          margin: 20px 0 50px 0;
+        }
+        .btn{
+          width: 100%;
+          text-align: end;
+          button{
+            border-radius: 10px;
+            width: 100px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background-color: cadetblue;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  .load{
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 0;
+    background-color: rgb(27, 126, 129);
+    color: #ffffff;
+    border-radius: 10px;
+    }
+}

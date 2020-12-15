@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgbCarousel, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesService } from '../services.service';
 
 
@@ -24,8 +25,12 @@ export class HeaderComponent{
   popularity
   voteAverage
   id
+  backgroundImage
   constructor(private apiLink: ServicesService,
-              private http: HttpClient) { }
+              private config:NgbCarouselConfig)
+               {
+                config.showNavigationArrows = false;
+               }
 
   ngOnInit(): void {
     this.apiLink.getApiPopular()
@@ -41,6 +46,7 @@ export class HeaderComponent{
         this.popularity = element.popularity*1000
         this.voteAverage = element.vote_average
         this.id = element.id
+        this.backgroundImage =this.linkPoster + this.poster
         this.movieAraay.push(
           {title:this.title,
           poster:this.linkPoster + this.poster,

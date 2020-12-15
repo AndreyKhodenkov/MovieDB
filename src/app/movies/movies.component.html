@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="movies">
+    <div class="movie" *ngFor='let item of movieArray'>
+      <div class="img">
+        <img [src]="item.image" alt="">
+        <div class="vote">
+          {{item.vote}}
+          <i class="fas fa-star"></i>
+        </div>
+      </div>
+      <div class="description">
+        <div class="title">{{item.title}}</div>
+        <div class="genre">{{item.genre}}</div>
+        <div class="over">{{item.overview}}</div>
+        <div class="date">{{item.date}}</div>
+        <div class="btn"><button [routerLink]="['/movie',item.id]">Details</button></div>
+      </div>
+    </div>
+    <button class="load" (click)="incr()">Load More...</button>
+  </div>
+</div>

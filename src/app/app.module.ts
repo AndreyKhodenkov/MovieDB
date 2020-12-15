@@ -11,6 +11,10 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { ColorDirective } from './color.directive';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { DetailTvComponent } from './detail-tv/detail-tv.component';
+import { MoviesComponent } from './movies/movies.component';
+import { JwPaginationModule } from 'jw-angular-pagination';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -21,14 +25,18 @@ import { DetailTvComponent } from './detail-tv/detail-tv.component';
     MainPageComponent,
     MovieDetailComponent,
     ColorDirective,
-    DetailTvComponent
+    DetailTvComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    JwPaginationModule,
+    FormsModule,
+    JwPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

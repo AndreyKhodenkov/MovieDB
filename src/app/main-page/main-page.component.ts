@@ -46,7 +46,7 @@ export class MainPageComponent implements OnInit{
   trandWeekResults
   trandWeekElement
   trandWeekArray = []
- constructor(private apiLink: ServicesService,
+  constructor(private apiLink: ServicesService,
               private http: HttpClient,
               config: NgbRatingConfig
             ) {

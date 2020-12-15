@@ -43,7 +43,7 @@ export class DetailTvComponent implements OnInit {
         this.tvItem = item
         this.title = this.tvItem.name
         this.image = this.linkImage + this.tvItem.poster_path
-        this.date = this.tvItem.release_date
+        this.date = this.tvItem.first_air_date
         this.backdrop = this.linkImage + this.tvItem.backdrop_path
         this.overview = this.tvItem.overview
         this.productionCoutry = this.tvItem.production_countries[0].name
@@ -52,14 +52,6 @@ export class DetailTvComponent implements OnInit {
         this.spoken = this.tvItem.spoken_languages[0].name
         this.revenue = this.tvItem.revenue
         this.vote = this.tvItem.vote_average
-
-        this.service.getTrailer(params.id)
-      .subscribe(item=>{
-        this.itemTrailer = item
-        this.trailerResults = this.itemTrailer.results
-        this.tralerLinkArray = this.trailerResults[0]
-        this.trailerKey = this.tralerLinkArray.key
-      })
       })
     })
   }

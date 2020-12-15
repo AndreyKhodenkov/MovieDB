@@ -52,3 +52,4 @@
 [1209/203325.643:ERROR:exception_snapshot_win.cc(99)] thread ID 220 not found in process
 [1209/204700.766:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
 [1210/080103.448:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[1211/204316.674:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
