@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { textSpanIntersectsWithPosition } from 'typescript';
 import { ServicesService } from '../services.service';
 
 @Component({
@@ -31,6 +32,23 @@ export class DetailTvComponent implements OnInit {
   vote
   toogle = true;
 
+  runTime
+  lastEpisode
+  lastEpisodeName
+  lastEpisodeNumber
+  lastEpisodeSeason
+  lastEpisodeOverview
+  airDate
+  numberEpisode
+  numberSeasons
+  productianCompany = []
+  nextEpisode
+  seasons
+  status
+  public isCollapsed = true;
+  productionCompanyIcon: any;
+  iconCompany: any;
+
   constructor(private rote:ActivatedRoute,
               private service:ServicesService) { }
 
@@ -38,8 +56,6 @@ export class DetailTvComponent implements OnInit {
     this.rote.params.subscribe((params:Params)=>{
       this.service.getTvDetail(params.id)
       .subscribe(item=>{
-        console.log(item);
-
         this.tvItem = item
         this.title = this.tvItem.name
         this.image = this.linkImage + this.tvItem.poster_path
@@ -48,10 +64,24 @@ export class DetailTvComponent implements OnInit {
         this.overview = this.tvItem.overview
         this.productionCoutry = this.tvItem.production_countries[0].name
         this.productionCompany = this.tvItem.production_companies[0].name
+        this.productionCompanyIcon =  this.tvItem.production_companies[0].logo_path
+        this.iconCompany = this.linkImage + this.productionCompanyIcon
         this.homepage = this.tvItem.homepage
         this.spoken = this.tvItem.spoken_languages[0].name
         this.revenue = this.tvItem.revenue
         this.vote = this.tvItem.vote_average
+        this.runTime = this.tvItem.episode_run_time[0]
+        this.lastEpisode = this.tvItem.last_episode_to_air
+        this.airDate = this.lastEpisode.air_date
+        this.lastEpisodeName = this.lastEpisode.name
+        this.lastEpisodeNumber = this.lastEpisode.episode_number
+        this.lastEpisodeSeason = this.lastEpisode.season_number
+        this.lastEpisodeOverview = this.lastEpisode.overview
+
+        this.numberEpisode = this.tvItem.number_of_episodes
+        this.numberSeasons = this.tvItem.number_of_seasons
+        this.nextEpisode = this.tvItem.next_episode_to_air
+        console.log(item);
       })
     })
   }

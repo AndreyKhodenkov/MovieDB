@@ -12,7 +12,7 @@
         <div class="anoter">
           <div class="date">Date Release:<span> {{date}}</span></div>
           <div class="country">Country:<span> {{productionCoutry}}</span></div>
-          <div class="company">Production Company:<span> {{productionCompany}}</span></div>
+          <div class="company" *ngIf='productionCompany'>Production Company:<span> {{productionCompany}}</span></div>
           <div class="homepage">Home Page: <span> <a [href]='homepage'>{{homepage}}</a></span></div>
           <div class="spoken">Spoken:<span> {{spoken}}</span></div>
           <div class="revenue" *ngIf='revenue > 0'>Revenue:<span> {{revenue}}$</span></div>

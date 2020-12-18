@@ -34,8 +34,9 @@ iframe{
         }
       }
       .description{
+        position: relative;
         width: 600px;
-        height: 600px;
+        height: 100%;
         border-radius: 10px;
         background-color: rgba(236, 236, 236, 0.781);
         display: flex;
@@ -49,6 +50,16 @@ iframe{
           font-weight: bold;
           color: #068a6d;
           border-bottom: 1px solid;
+        }
+        .card-body{
+          background-color: #ffffff ;
+          position: absolute;
+        }
+        .company{
+          img{
+            width: 70px;
+            margin-left: 20px;
+          }
         }
         .anoter{
           font-family: 'Quicksand', sans-serif;

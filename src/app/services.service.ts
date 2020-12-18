@@ -44,22 +44,7 @@ export class ServicesService {
   getGenre(){
    return this.http.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.apiKey}&language=en-US`)
   }
-  fff
-  ggg = []
-  getArrayGenre(gen){
-   this.getGenre()
-    .subscribe(item=>{
-      this.item = item
-      this.genres = this.item.genres
-      this.genres.forEach(element => {
-        for (const key in element) {
-          for(let i = 0; i < gen.length;i++)
-          if(element[key] === gen[i]){
-            this.ggg.push(element.name)
-          }
-        }
-      });
-    })
-    return this.ggg
+  getDiscoverTv(count){
+    return this.http.get(`https://api.themoviedb.org/3/discover/tv?api_key=${this.apiKey}&language=en-US&sort_by=popularity.desc&page=${count}&timezone=America%2FNew_York&include_null_first_air_dates=false`)
   }
 }
