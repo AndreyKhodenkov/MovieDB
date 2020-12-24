@@ -1,18 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
-.main{
-  .movies{
+
+.main {
+  .input {
+    text-align: center;
+
+    input {
+      width: 600px;
+      border-radius: 5px;
+      padding: 5px;
+      outline: none;
+      border: 1px solid rgba(0, 0, 0, 0.432);
+      margin-top: 10px;
+    }
+  }
+
+  .movies {
     font-family: 'Baloo 2', cursive;
     width: 90%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    .movie{
+
+    .movie {
       margin: 10px;
       padding: 5px 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.397);
-      .img{
+
+      .img {
         position: relative;
-        .vote{
+
+        .vote {
           position: absolute;
           display: flex;
           align-items: center;
@@ -25,35 +42,43 @@
           border-radius: 20px;
           width: 60px;
           font-size: 18px;
-          i{
+
+          i {
             margin: 0 5px;
             font-size: 18px;
             color: yellow;
           }
         }
-        img{
+
+        img {
           border-radius: 10px;
           width: 200px;
         }
       }
-      .description{
+
+      .description {
         position: relative;
         display: flex;
         flex-direction: column;
         width: 200px;
         height: 100px;
-        .title{
+
+        .title {
           font-size: 20px;
         }
-        .date{
+
+        .date {
           opacity: 0.6;
         }
-        .over{
+
+        .over {
           display: none;
         }
-        .btn{
+
+        .btn {
           width: 100%;
-          button{
+
+          button {
             position: absolute;
             bottom: 0;
             border-radius: 10px;
@@ -68,7 +93,8 @@
       }
     }
   }
-  .load{
+
+  .load {
     width: 100%;
     margin: 10px 0;
     border: none;
@@ -78,5 +104,10 @@
     background-color: rgb(27, 126, 129);
     color: #ffffff;
     border-radius: 10px;
-    }
+  }
+}
+
+.paginate {
+  display: flex;
+  justify-content: center;
 }

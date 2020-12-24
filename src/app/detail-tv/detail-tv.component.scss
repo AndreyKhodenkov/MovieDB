@@ -1,94 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-.circle{
+
+.circle {
   width: 30px;
   height: 30px;
   border: 1px solid;
   border-radius: 50%;
   text-align: center;
-  i{
+
+  i {
     margin-top: 25%;
   }
 }
-iframe{
+
+iframe {
   display: none;
 }
-.main{
+
+.main {
   margin-top: 10px;
-  width:95%;
+  width: 95%;
   border-radius: 20px;
-  .top{
-      margin: 0 auto;
-      border-radius: 100px;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 2;
-      background-color: rgba(5, 99, 122, 0.438);
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      .image{
-        img{
-          width: 450px;
-          border-radius: 10px;
-        }
-      }
-      .description{
-        position: relative;
-        width: 600px;
-        height: 100%;
+
+  .top {
+    margin: 0 auto;
+    width: 100%;
+    height: 755px;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(5, 99, 122, 0.438);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .image {
+      img {
+        width: 450px;
         border-radius: 10px;
-        background-color: rgba(236, 236, 236, 0.781);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        .title{
-          text-transform: uppercase;
-          text-align: center;
-          font-size: 28px;
-          font-weight: bold;
-          color: #068a6d;
-          border-bottom: 1px solid;
+      }
+    }
+
+    .description {
+      position: relative;
+      width: 600px;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: rgba(236, 236, 236, 0.781);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: #068a6d;
+        border-bottom: 1px solid;
+      }
+
+      .card-body {
+        background-color: #ffffff;
+        position: absolute;
+      }
+
+      .company {
+        img {
+          width: 70px;
+          margin-left: 20px;
         }
-        .card-body{
-          background-color: #ffffff ;
-          position: absolute;
-        }
-        .company{
-          img{
-            width: 70px;
-            margin-left: 20px;
-          }
-        }
-        .anoter{
-          font-family: 'Quicksand', sans-serif;
-          width: 80%;
-          div{
-            font-weight: 700;
-            color: rgb(32, 103, 184);
-            font-size: 20px;
-            span{
-              font-weight: normal;
-              color: #068a6d;
-              font-size: 16px;
-            }
+      }
+
+      .anoter {
+        font-family: 'Quicksand', sans-serif;
+        width: 80%;
+
+        div {
+          font-weight: 700;
+          color: rgb(32, 103, 184);
+          font-size: 20px;
+
+          span {
+            font-weight: normal;
+            color: #068a6d;
+            font-size: 16px;
           }
         }
       }
     }
-    .bottom{
-      height: 100%;
+
+    .seasons {
+      background-color: rgba(0, 0, 0, 0.459);
+      padding: 15px;
       position: absolute;
-      width: 100%;
-      img{
-        border-radius: 100px;
-        width: 100%;
-        height: 100%;
+      bottom: 0;
+      top: 0;
+      display: flex;
+      flex-wrap: wrap;
+      width: 780px;
+
+      .season {
+        margin-left: 5px;
+      }
+
+      i {
+        color: #ffffff;
+        position: absolute;
+        top: 0;
+        font-size: 18px;
+        right: 0;
+        cursor: pointer;
+      }
+
+      .descriptionSeason {
+        background-color: #069c88;
+        font-size: 14px;
+        color: #ffffff;
+      }
+
+      img {
+        width: 120px;
       }
     }
+  }
+
+  .bottom {
+    height: 755px;
+    position: absolute;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 755px;
+    }
+  }
 }
-h1{
+
+h1 {
   text-transform: uppercase;
   font-family: 'Varela Round', sans-serif;
   color: #068a6d;

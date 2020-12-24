@@ -1,33 +1,34 @@
 <div class="main_block">
   <div class="top_navigation">
-   <div class="nav-bar">
+    <div class="nav-bar">
       <ul>
         <li><a [routerLink]="['']">Home Page</a></li>
         <li><a [routerLink]="['movies']">Movies</a></li>
         <li><a [routerLink]="['tv']">TV</a></li>
-        <li class="login"><a href="#">Login</a><i class="fas fa-user"></i> </li>
+        <li class="login"><a href="#">Login<i class="fas fa-user"></i></a></li>
       </ul>
     </div>
   </div>
   <ngb-carousel class="carousel">
-  <ng-template ngbSlide *ngFor="let item of movieAraay">
-    <div class="description">
-      <div class="title_name">{{item.title}}</div>
-      <div class="overview">{{item.overview}}</div>
-      <div class="release">
-        <h3>Date release</h3>
-        {{item.release}}
+    <ng-template ngbSlide *ngFor="let item of movieAraay">
+      <div class="description">
+        <div class="title_name">{{item.title}}</div>
+        <div class="overview">{{item.overview}}</div>
+        <div class="release">
+          <h3>Date release</h3>
+          {{item.release}}
+        </div>
+        <div class="vote">
+          <h3>Vote</h3>
+          <p>
+            <ngb-progressbar [showValue]="true" type="primary" [value]="item.vote" [max]="10"></ngb-progressbar>
+          </p>
+        </div>
+        <button [routerLink]="['/movie',item.id]">Watch</button>
       </div>
-      <div class="vote">
-        <h3>Vote</h3>
-        <p><ngb-progressbar [showValue]="true" type="primary" [value]="item.vote" [max]="10"></ngb-progressbar></p>
+      <div class="picsum-img-wrapper">
+        <img [src]="item.poster" alt="">
       </div>
-      <button [routerLink]="['/movie',item.id]">Watch</button>
-    </div>
-    <div class="picsum-img-wrapper">
-      <img [src]="item.poster" alt="" >
-    </div>
-  </ng-template>
-</ngb-carousel>
+    </ng-template>
+  </ngb-carousel>
 </div>
-

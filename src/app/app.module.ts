@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
@@ -15,6 +14,7 @@ import { JwPaginationModule } from 'jw-angular-pagination';
 import { FormsModule } from '@angular/forms';
 import { SerialsComponent } from './serials/serials.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FindPipe } from './find.pipe';
 
 
 
@@ -22,13 +22,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     MainPageComponent,
     MovieDetailComponent,
     ColorDirective,
     DetailTvComponent,
     MoviesComponent,
     SerialsComponent,
+    FindPipe,
   ],
   imports: [
     BrowserModule,

@@ -9,30 +9,27 @@
     </div>
     <div class="description">
       <div class="title">{{title}}</div>
-        <div class="anoter">
-          <div class="date">Date Release:<span> {{date}}</span></div>
-          <div class="country">Country:<span> {{productionCoutry}}</span></div>
-          <div class="company" *ngIf='productionCompany'>Production Company:<span> {{productionCompany}}</span></div>
-          <div class="homepage">Home Page: <span> <a [href]='homepage'>{{homepage}}</a></span></div>
-          <div class="spoken">Spoken:<span> {{spoken}}</span></div>
-          <div class="revenue" *ngIf='revenue > 0'>Revenue:<span> {{revenue}}$</span></div>
-          <div class="vote">Vote: <span>{{vote}}</span></div>
-          <div class="overvew">Overvew:<span> {{overview}}</span></div>
-        </div>
-        <button (click)='toogle = !toogle'>Trailer</button>
+      <div class="anoter">
+        <div class="date">Date Release:<span> {{date}}</span></div>
+        <div class="country">Country:<span> {{productionCoutry}}</span></div>
+        <div class="company" *ngIf='productionCompany'>Production Company:<span> {{productionCompany}}</span></div>
+        <div class="homepage">Home Page: <span> <a [href]='homepage'>{{homepage}}</a></span></div>
+        <div class="spoken">Spoken:<span> {{spoken}}</span></div>
+        <div class="revenue" *ngIf='revenue > 0'>Revenue:<span> {{revenue}}$</span></div>
+        <div class="vote">Vote: <span>{{vote}}</span></div>
+        <div class="overvew">Overvew:<span> {{overview}}</span></div>
       </div>
-      <div class="trailer" *ngIf='!toogle'>
-        <youtube-player
-          videoId={{trailerKey}}
-          suggestedQuality="highres"
-          [height]="400"
-          [width]="500"
-          [startSeconds]="4"
-          [endSeconds]="8">
-        </youtube-player>
-      </div>
+      <button (click)='toogle = !toogle'>Trailer</button>
     </div>
-    <div class="bottom">
-      <img [src]='backdrop' alt="">
+  </div>
+  <div class="bottom">
+    <img [src]='backdrop' alt="">
+  </div>
+  <div class="trailer" *ngIf='!toogle'>
+    <div class="video">
+      <i class="fas fa-window-close" (click)='toogle = !toogle'></i>
+      <youtube-player videoId={{trailerKey}} suggestedQuality="highres" [height]="400" [width]="700">
+      </youtube-player>
     </div>
+  </div>
 </div>
