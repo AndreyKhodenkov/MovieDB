@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "~10.1.0",
     "@angular/router": "~10.1.0",
     "@angular/youtube-player": "^11.0.2",
+    "@fullcalendar/angular": "^5.5.0",
+    "@fullcalendar/daygrid": "^5.5.0",
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
     "@ngmodule/material-carousel": "^0.6.0",
     "angular-responsive-carousel": "^2.0.1",

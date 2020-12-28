@@ -2,7 +2,21 @@
   <div class="input">
     <input type="text" [(ngModel)]='search' placeholder="find movie">
   </div>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Sort</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="btn">
+      <button ngbDropdownItem (click)='sortRate(1)'>Min Rate</button>
+      <button ngbDropdownItem (click)='sortRate(0)'>Max Rate</button>
+      <button ngbDropdownItem (click)='sortDate(1)'>Min Year</button>
+      <button ngbDropdownItem (click)='sortDate(0)'>Max Year</button>
+    </div>
+  </div>
   <div class="movies">
+    <div class="genre_btn">
+      <div class="genre" *ngFor='let item of genre'>
+     <button class="filter" (click)='filterGenre(item.id)'(click)='filterTootgle = !filterTootgle'>{{item.name}}</button>
+      </div>
+    </div>
     <div class="movie" *ngFor='let item of movieArray|find:search|slice:(page-1)*pageSize:page*pageSize'>
       <div class="img">
         <img [src]="item.image" alt="">
@@ -15,7 +29,7 @@
         <div class="title">{{item.title}}</div>
         <div class="genre">{{item.genre}}</div>
         <div class="over">{{item.overview}}</div>
-        <div class="date">{{item.date}}</div>
+        <div class="date">{{item.date|myDate}}</div>
         <div class="btn"><button [routerLink]="['/movie',item.id]">Details</button></div>
       </div>
     </div>

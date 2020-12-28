@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
+import { AddMovieService } from '../add-movie.service';
 import { ServicesService } from '../services.service';
 
 @Component({
@@ -30,15 +31,15 @@ export class MovieDetailComponent implements OnInit {
   revenue;
   vote;
   toogle = true;
+  heart = true;
   constructor(
     private route: ActivatedRoute,
     private service: ServicesService,
-    private safeVideo: DomSanitizer
+    private safeVideo: DomSanitizer,
   ) {}
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.service.getMovieDetail(params.id).subscribe((item) => {
-        console.log(item);
         this.movieItem = item;
         this.title = this.movieItem.title;
         this.image = this.linkImage + this.movieItem.poster_path;

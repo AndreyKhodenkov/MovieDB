@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
 
 .main {
+  .genre_btn button{
+    padding:0 5px;
+    border-radius: 5px;
+    outline: red;
+    border: 1px solid rgb(1, 143, 112);
+    background-color: #ffffff;
+  }
+  .active{
+    background-color: rgb(1, 143, 112);
+  }
+  .genre_btn{
+    width: 100%;
+    justify-content: space-evenly;
+    display: flex;
+  }
   .input {
     text-align: center;
 

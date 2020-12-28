@@ -6,14 +6,14 @@ import { Directive, HostBinding } from '@angular/core';
 })
 export class ColorDirective {
   toogle = true
-  @HostBinding('style.color') myColor = ''
+  @HostBinding('style.color') myColor = 'green'
   chengeColor(color:string){
     this.toogle = !this.toogle
     if(this.toogle){
-       this.myColor = color
+       this.myColor = 'red'
     }
     else{
-      this.myColor = ''
+      this.myColor = 'red'
     }
 
   }

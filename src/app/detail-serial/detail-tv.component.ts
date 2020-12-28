@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { CalendarOptions } from '@fullcalendar/angular';
+import { NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { textSpanIntersectsWithPosition } from 'typescript';
 import { ServicesService } from '../services.service';
 
@@ -46,14 +48,17 @@ export class DetailTvComponent implements OnInit {
   seasonsName;
   seasonsEpisode;
   seasonsDate;
+  seasonsId;
   seasonsOut = [];
   public isCollapsed = true;
   public isCollapsedSecond = false;
 
   productionCompanyIcon: any;
   iconCompany: any;
-  constructor(private rote: ActivatedRoute, private service: ServicesService) {}
+  nextEpisodeDate: any;
 
+  constructor(private rote: ActivatedRoute, private service: ServicesService) {
+  }
   ngOnInit(): void {
     this.rote.params.subscribe((params: Params) => {
       this.service.getTvDetail(params.id).subscribe((item) => {
@@ -81,6 +86,7 @@ export class DetailTvComponent implements OnInit {
         this.numberEpisode = this.tvItem.number_of_episodes;
         this.numberSeasons = this.tvItem.number_of_seasons;
         this.nextEpisode = this.tvItem.next_episode_to_air;
+        this.nextEpisodeDate = this.nextEpisode.air_date
         this.seasons = this.tvItem.seasons;
         this.seasons.forEach((item) => {
           this.seasonsDate = item.air_date;
@@ -92,9 +98,10 @@ export class DetailTvComponent implements OnInit {
             image: this.seasonsPoster,
             date: this.seasonsDate,
             episode: this.seasonsEpisode,
+            id:this.seasonsId
           });
         });
-        console.log(this.seasonsOut);
+        console.log(this.tvItem);
       });
     });
   }

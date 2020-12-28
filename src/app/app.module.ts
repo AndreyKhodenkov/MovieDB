@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { ColorDirective } from './color.directive';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-import { DetailTvComponent } from './detail-tv/detail-tv.component';
+import { DetailTvComponent } from './detail-serial/detail-tv.component';
 import { MoviesComponent } from './movies/movies.component';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { FormsModule } from '@angular/forms';
 import { SerialsComponent } from './serials/serials.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FindPipe } from './find.pipe';
+import { FindPipe } from './pipes/find.pipe';
+import { MyMoviesComponent } from './my-movies/my-movies.component';
+import { MyDatePipe } from './pipes/my-date.pipe';
 
 
 
@@ -29,6 +31,8 @@ import { FindPipe } from './find.pipe';
     MoviesComponent,
     SerialsComponent,
     FindPipe,
+    MyMoviesComponent,
+    MyDatePipe,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { FindPipe } from './find.pipe';
     JwPaginationModule,
     FormsModule,
     NgbModule
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

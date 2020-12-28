@@ -32,7 +32,8 @@ export class HeaderComponent {
   }
 
   ngOnInit(): void {
-    this.apiLink.getApiPopular().subscribe((item) => {
+    this.apiLink.getApiNowPlaying()
+    .subscribe((item) => {
       this.itemLinkMovie = item;
       this.resultsMovie = this.itemLinkMovie.results;
       this.resultsMovie.forEach((element) => {
