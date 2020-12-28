@@ -86,7 +86,6 @@ export class DetailTvComponent implements OnInit {
         this.numberEpisode = this.tvItem.number_of_episodes;
         this.numberSeasons = this.tvItem.number_of_seasons;
         this.nextEpisode = this.tvItem.next_episode_to_air;
-        this.nextEpisodeDate = this.nextEpisode.air_date
         this.seasons = this.tvItem.seasons;
         this.seasons.forEach((item) => {
           this.seasonsDate = item.air_date;
@@ -101,7 +100,6 @@ export class DetailTvComponent implements OnInit {
             id:this.seasonsId
           });
         });
-        console.log(this.tvItem);
       });
     });
   }

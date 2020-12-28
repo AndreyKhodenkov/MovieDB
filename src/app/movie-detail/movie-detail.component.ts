@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AddMovieService } from '../add-movie.service';
+import { FilterService } from '../filter.service';
 import { ServicesService } from '../services.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class MovieDetailComponent implements OnInit {
   linkTrailer;
   videoUrl;
   movieItem;
-  title;
+  title:string;
   image;
   date;
   backdrop;
@@ -32,11 +33,16 @@ export class MovieDetailComponent implements OnInit {
   vote;
   toogle = true;
   heart = true;
+  movie;
   constructor(
     private route: ActivatedRoute,
     private service: ServicesService,
     private safeVideo: DomSanitizer,
+    public add: AddMovieService
   ) {}
+  addMovie(movie){
+    this.add.addToCart(movie)
+  }
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.service.getMovieDetail(params.id).subscribe((item) => {
@@ -54,6 +60,19 @@ export class MovieDetailComponent implements OnInit {
         this.spoken = this.movieItem.spoken_languages[0].name;
         this.revenue = this.movieItem.revenue;
         this.vote = this.movieItem.vote_average;
+        this.movie = {
+          name:this.title,
+          image:this.image,
+          date:this.date,
+          backdrop:this.backdrop,
+          overview:this.overview,
+          productionCoutry:this.productionCoutry,
+          productionCompany:this.productionCompany,
+          homepage:this.homepage,
+          spoken:this.spoken,
+          revenue:this.revenue,
+          vote:this.vote,
+        }
       });
       this.service.getTrailer(params.id).subscribe((item) => {
         this.itemTrailer = item;

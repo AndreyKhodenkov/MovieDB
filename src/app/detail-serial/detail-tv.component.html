@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="next" *ngIf='nextEpisode'>Next Episode: <span>{{nextEpisodeDate|myDate}}</span></div>
+      <div class="next" *ngIf='nextEpisode === !null'>Next Episode: <span>{{nextEpisodeDate}}</span></div>
         <div class="episod">
           Seasons: <span>{{numberSeasons}}</span>. Episodes: <span>{{numberEpisode}}</span>
         </div>
@@ -43,7 +43,7 @@
         <div class="vote">Vote: <span>{{vote}}</span></div>
         <div class="overvew">Overvew:<span> {{overview}}</span></div>
       </div>
-      <button class="btn btn-outline-primary" (click)="isCollapsedSecond = !isCollapsedSecond">Show Seasons</button>
+      <button *ngIf='seasonsOut.length > 0' class="btn btn-outline-primary" (click)="isCollapsedSecond = !isCollapsedSecond">Show Seasons</button>
     </div>
     <div class="seasons" *ngIf="isCollapsedSecond">
       <i class="fas fa-window-close" (click)="isCollapsedSecond = !isCollapsedSecond"></i>
@@ -53,7 +53,7 @@
           <div class="descriptionSeason">
             <div class="nameSeason">Name: {{item.name}}</div>
             <div class="episodeSeason">Episodes: {{item.episode}}</div>
-            <div class="dateSeason">Date: {{item.date}}</div>
+            <div class="dateSeason" *ngIf='item.date'>Date: {{item.date}}</div>
           </div>
         </div>
       </div>

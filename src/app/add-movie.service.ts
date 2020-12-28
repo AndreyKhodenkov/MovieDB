@@ -9,7 +9,6 @@ export class AddMovieService {
   addToCart(movie) {
     this.movies.push(movie);
     console.log(this.movies);
-
   }
 
   getItems() {

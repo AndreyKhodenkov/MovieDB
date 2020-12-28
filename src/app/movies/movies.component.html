@@ -14,7 +14,8 @@
   <div class="movies">
     <div class="genre_btn">
       <div class="genre" *ngFor='let item of genre'>
-     <button class="filter" (click)='filterGenre(item.id)'(click)='filterTootgle = !filterTootgle'>{{item.name}}</button>
+        <button class="filter" (click)='filterGenre(item.id)'
+          (click)='filterTootgle = !filterTootgle'>{{item.name}}</button>
       </div>
     </div>
     <div class="movie" *ngFor='let item of movieArray|find:search|slice:(page-1)*pageSize:page*pageSize'>
@@ -27,8 +28,6 @@
       </div>
       <div class="description">
         <div class="title">{{item.title}}</div>
-        <div class="genre">{{item.genre}}</div>
-        <div class="over">{{item.overview}}</div>
         <div class="date">{{item.date|myDate}}</div>
         <div class="btn"><button [routerLink]="['/movie',item.id]">Details</button></div>
       </div>
@@ -39,5 +38,4 @@
       [collectionSize]="movieArray.length">
     </ngb-pagination>
   </div>
-
 </div>

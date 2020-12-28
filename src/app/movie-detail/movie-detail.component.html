@@ -7,10 +7,10 @@
 
     <div class="description">
       <div class="circle">
-        <i *ngIf='heart'(click)='heart = !heart' class="fas fa-heart-broken fa-4x" ></i>
-        <i *ngIf='!heart' class="fas fa-heart fa-4x" (click)='heart = !heart'></i>
+        <i *ngIf='heart'(click)='heart = !heart' class="fas fa-heart-broken fa-4x"></i>
+        <i *ngIf='!heart' (click)='addMovie(movie)'class="fas fa-heart fa-4x" (click)='heart = !heart' ></i>
       </div>
-      <div class="title">{{title}}</div>
+     <div class="title">{{title}}</div>
       <div class="anoter">
         <div class="date">Date Release:<span> {{date|myDate}}</span></div>
         <div class="country">Country:<span> {{productionCoutry}}</span></div>
@@ -35,4 +35,3 @@
     </div>
   </div>
 </div>
-
