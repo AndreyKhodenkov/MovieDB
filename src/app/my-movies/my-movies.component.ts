@@ -19,6 +19,8 @@ export class MyMoviesComponent implements OnInit {
   }
   ngOnInit(): void {
    this.arrayMovie = this.array.getItems()
+   console.log(this.arrayMovie);
+
   }
 
 }

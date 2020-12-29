@@ -97,6 +97,7 @@ export class DetailTvComponent implements OnInit {
         this.nextEpisode = this.tvItem.next_episode_to_air;
         this.seasons = this.tvItem.seasons;
         this.movie = {
+          type:'serial',
           id:this.id,
           name:this.title,
           image:this.image,

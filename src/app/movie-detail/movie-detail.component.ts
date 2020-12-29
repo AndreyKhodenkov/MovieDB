@@ -64,6 +64,7 @@ export class MovieDetailComponent implements OnInit {
         this.revenue = this.movieItem.revenue;
         this.vote = this.movieItem.vote_average;
         this.movie = {
+          type:'movie',
           id:this.id,
           name:this.title,
           image:this.image,
