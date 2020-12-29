@@ -5,12 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class AddMovieService {
   movies = [];
+  index;
   constructor() { }
   addToCart(movie) {
     this.movies.push(movie);
-    console.log(this.movies);
   }
-
+  deleteMovie(movie){
+    this.index = this.movies.indexOf(movie.id)
+    this.movies.slice(this.index,1)
+  }
   getItems() {
     return this.movies;
   }

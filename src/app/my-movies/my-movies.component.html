@@ -1,1 +1,11 @@
-<p>my-movies works!</p>
+<div class="main">
+  <div class="empty" *ngIf='!arrayMovie.length'>empty here...</div>
+  <div class="movies">
+    <div class="movie" *ngFor='let item of arrayMovie'>
+      <img [src]='item.image' alt="">
+      <div class="name">{{item.name}}</div>
+      <div class="date">{{item.date|myDate}}</div>
+      <div class="dateAdd">Date add: {{item.time|date}}</div>
+      <i class="far fa-trash-alt" (click)='remove(item.id)'></i>
+  </div>
+</div>

@@ -23,6 +23,7 @@ export class HeaderComponent {
   voteAverage;
   id;
   backgroundImage;
+  image;
   constructor(
     private apiLink: ServicesService,
     private config: NgbCarouselConfig
@@ -46,6 +47,7 @@ export class HeaderComponent {
         this.voteAverage = element.vote_average;
         this.id = element.id;
         this.backgroundImage = this.linkPoster + this.poster;
+        this.image = this.linkPoster + element.poster_path
         this.movieAraay.push({
           title: this.title,
           poster: this.linkPoster + this.poster,
@@ -54,6 +56,7 @@ export class HeaderComponent {
           popularity: this.popularity,
           vote: this.voteAverage,
           id: this.id,
+          image:this.image
         });
       });
     });

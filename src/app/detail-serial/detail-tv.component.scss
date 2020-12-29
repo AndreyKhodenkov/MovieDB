@@ -38,6 +38,22 @@ iframe {
         border-radius: 10px;
       }
     }
+    .circle {
+      display: flex;
+      //align-items: center;
+      justify-content: center;
+      background-color: #ffffff62;
+      width:90px;
+      height: 90px;
+      border: 1px solid rgba(0, 0, 0, 0.356);
+      border-radius: 50%;
+      text-align: center;
+      i{
+        color: rgb(122, 2, 2);
+        position: relative;
+        z-index: 2;
+      }
+    }
 
     .description {
       position: relative;

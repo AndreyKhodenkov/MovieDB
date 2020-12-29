@@ -11,6 +11,12 @@
   </div>
   <ngb-carousel class="carousel">
     <ng-template ngbSlide *ngFor="let item of movieAraay">
+      <div class="imagePoster">
+
+        <img [src]='item.image' alt="">
+        <button [routerLink]="['/movie',item.id]">Watch</button>
+
+      </div>
       <div class="description">
         <div class="title_name">{{item.title}}</div>
         <div class="overview">{{item.overview}}</div>
@@ -24,11 +30,12 @@
             <ngb-progressbar [showValue]="true" type="primary" [value]="item.vote" [max]="10"></ngb-progressbar>
           </p>
         </div>
-        <button [routerLink]="['/movie',item.id]">Watch</button>
       </div>
+
       <div class="picsum-img-wrapper">
-        <img [src]="item.poster" alt="">
+        <img class="img" [src]="item.poster" alt="">
       </div>
+
     </ng-template>
   </ngb-carousel>
 </div>

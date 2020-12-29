@@ -34,6 +34,8 @@ export class MovieDetailComponent implements OnInit {
   toogle = true;
   heart = true;
   movie;
+  dateTime = new Date;
+  id: any;
   constructor(
     private route: ActivatedRoute,
     private service: ServicesService,
@@ -47,6 +49,7 @@ export class MovieDetailComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.service.getMovieDetail(params.id).subscribe((item) => {
         this.movieItem = item;
+        this.id = this.movieItem.id
         this.title = this.movieItem.title;
         this.image = this.linkImage + this.movieItem.poster_path;
         this.date = this.movieItem.release_date;
@@ -61,6 +64,7 @@ export class MovieDetailComponent implements OnInit {
         this.revenue = this.movieItem.revenue;
         this.vote = this.movieItem.vote_average;
         this.movie = {
+          id:this.id,
           name:this.title,
           image:this.image,
           date:this.date,
