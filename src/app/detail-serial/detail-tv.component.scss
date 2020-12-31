@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-.circle {
-  width: 30px;
-  height: 30px;
-  border: 1px solid;
-  border-radius: 50%;
-  text-align: center;
-
-  i {
-    margin-top: 25%;
-  }
-}
-
 iframe {
   display: none;
 }
@@ -38,17 +26,9 @@ iframe {
         border-radius: 10px;
       }
     }
+
     .circle {
-      display: flex;
-      //align-items: center;
-      justify-content: center;
-      background-color: #ffffff62;
-      width:90px;
-      height: 90px;
-      border: 1px solid rgba(0, 0, 0, 0.356);
-      border-radius: 50%;
-      text-align: center;
-      i{
+      i {
         color: rgb(122, 2, 2);
         position: relative;
         z-index: 2;
@@ -58,9 +38,9 @@ iframe {
     .description {
       position: relative;
       width: 600px;
-      height: 700px;
+      height: 100%;
       border-radius: 10px;
-      padding: 20px;
+      padding: 5px;
       background-color: rgba(236, 236, 236, 0.781);
       display: flex;
       flex-direction: column;
@@ -117,6 +97,7 @@ iframe {
       display: flex;
       flex-wrap: wrap;
       width: 780px;
+
       .season {
         margin-left: 5px;
       }

@@ -7,12 +7,16 @@
 
     <div class="description">
       <div class="circle">
-        <i *ngIf='heart' (click)='addMovie(movie)' (click)='movie.time = dateTime'  (click)='heart = !heart' class="fas fa-heart-broken fa-4x" ></i>
-       <i *ngIf='!heart'class="fas fa-heart fa-4x"></i>
+        <i *ngIf='heart' (click)='addMovie(movie)' (click)='movie.time = dateTime' (click)='heart = !heart'
+          class="fas fa-heart-broken fa-3x"></i>
+        <i *ngIf='!heart' class="fas fa-heart fa-4x"></i>
       </div>
-     <div class="title">{{title}}</div>
+      <div class="title">{{title}}</div>
       <div class="anoter">
         <div class="date">Date Release:<span> {{date|myDate}}</span></div>
+        <div class="genre">
+          Genres: <span *ngFor='let item of genre'>{{item.name}} </span>
+        </div>
         <div class="country">Country:<span> {{productionCoutry}}</span></div>
         <div class="company" *ngIf='productionCompany'>Production Company:<span> {{productionCompany}}</span></div>
         <div class="homepage">Home Page: <span> <a [href]='homepage'>{{homepage}}</a></span></div>

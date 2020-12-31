@@ -1,29 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-.main_block{
+
+.main_block {
   margin-top: 50px;
   overflow: show;
   width: 100%;
-  h3{
+
+  h3 {
     font-family: 'Righteous', cursive;
     text-transform: uppercase;
     color: #7c0707;
-   }
- .most_popular{
-   width: 90%;
-   text-align: center;
-   border-radius: 10px;
-   box-shadow: 1px 0px 10px #23b29570;
-   padding: 10px;
-   margin: 10px auto;
+  }
 
- }
-  .popular_actor{
+  .most_popular {
+    width: 90%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 0px 10px #23b29570;
+    padding: 10px;
+    margin: 10px auto;
+
+  }
+
+  .popular_actor {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 10px;
-    .actor{
+
+    .actor {
       border: 1px solid #11b093;
       box-shadow: 0px 1px 1px 1px rgb(148, 199, 189);
       width: 130px;
@@ -36,24 +41,27 @@
       color: #11b093;
       text-align: center;
       background-color: rgb(255, 255, 255);
-      img{
+
+      img {
         width: 120px;
         border-radius: 5px;
       }
     }
   }
 
-  .another_movie{
+  .another_movie {
     margin: 20px auto;
     display: flex;
     width: 90%;
     text-align: center;
     text-transform: uppercase;
-    .movie{
+
+    .movie {
       margin: 2px;
       width: 170px;
     }
-    .playing{
+
+    .playing {
       padding: 5px;
       text-align: center;
       display: flex;
@@ -63,11 +71,13 @@
       margin: 12px;
       border-radius: 10px;
     }
-    img{
+
+    img {
       border-radius: 5px;
       width: 150px;
     }
-    .movie{
+
+    .movie {
       position: relative;
       padding: 2px;
       border-radius: 5px;
@@ -75,32 +85,37 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      .vote{
+
+      .vote {
         position: absolute;
         top: 10px;
         right: 20px;
-        background-color:#489b88;
+        background-color: #489b88;
         padding: 0 4px;
         border-radius: 4px;
         color: white;
-        i{
+
+        i {
           color: yellow;
         }
       }
-      .title{
+
+      .title {
         height: 40px;
         font-size: 14px;
-        color:#11b093;
+        color: #11b093;
       }
     }
   }
-  .button{
+
+  .button {
     text-align: center;
-    button{
+
+    button {
       width: 150px;
       margin: 5px;
       padding: 5px;
-      background:linear-gradient(#096260d1, #07857cba);
+      background: linear-gradient(#096260d1, #07857cba);
       letter-spacing: 2px;
       text-transform: uppercase;
       border: none;
@@ -112,50 +127,54 @@
     }
   }
 
-  .movies{
-    ngb-rating{
+  .movies {
+    ngb-rating {
       color: #0f12d9;
       font-size: 22px;
     }
+
     position: relative;
     margin: 0 auto;
     width: 90%;
     display: flex;
     overflow-x: auto;
     border-radius: 10px;
-    .poster{
+
+    .poster {
       margin: 5px;
       border-radius: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    img{
-     border-radius: 10px;
-     width: 250px;
-   }
- }
- .description{
-    .title{
+
+    img {
+      border-radius: 10px;
+      width: 250px;
+    }
+  }
+
+  .description {
+    .title {
       text-transform: uppercase;
       color: #256354;
       font-size: 16px;
       text-align: center;
       font-family: 'Varela Round', sans-serif;
     }
-    .vote{
+
+    .vote {
       border-radius: 10px;
       font-weight: bold;
       padding: 5px;
-      background: linear-gradient(90deg,#11b093,#ffffff);
+      background: linear-gradient(90deg, #11b093, #ffffff);
       color: yellow;
     }
- }
- .title{
-  h3{
-    text-align: center;
   }
- }
+
+  .title {
+    h3 {
+      text-align: center;
+    }
+  }
 }
-
-

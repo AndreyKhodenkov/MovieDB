@@ -4,10 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FilterService {
-  filterTootgle = true;
-  filterArray: any[];
-
   constructor() { }
 
-  
+
 }

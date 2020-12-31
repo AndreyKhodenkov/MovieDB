@@ -3,19 +3,19 @@
   <div class="movies">
     <div class="movie" *ngFor='let item of arrayMovie'>
       <div class="film" *ngIf='item.type === "movie"'>
-        <img [src]='item.image' [routerLink]="['/movie',item.id]"alt="">
+        <img [src]='item.image' [routerLink]="['/movie',item.id]" alt="">
         <div class="name">{{item.name}}</div>
         <div class="date">{{item.date|myDate}}</div>
-          <div class="dateAdd">Date add: {{item.time|date}}</div>
-      <i class="far fa-trash-alt" (click)='remove(item.id)'></i>
+        <div class="dateAdd">Date add: {{item.time|date}}</div>
+        <i class="far fa-trash-alt" (click)='remove(item.id)'></i>
       </div>
       <div class="serial" *ngIf='item.type !=="movie"'>
         <img [routerLink]="['/tv-detail',item.id]" [src]='item.image' alt="">
         <div class="name">{{item.name}}</div>
         <div class="date">{{item.date|myDate}}</div>
-          <div class="dateAdd">Date add: {{item.time|date}}</div>
-      <i class="far fa-trash-alt" (click)='remove(item.id)'></i>
+        <div class="dateAdd">Date add: {{item.time|date}}</div>
+        <i class="far fa-trash-alt" (click)='remove(item.id)'></i>
       </div>
 
+    </div>
   </div>
-</div>

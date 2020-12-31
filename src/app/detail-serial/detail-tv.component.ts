@@ -54,24 +54,26 @@ export class DetailTvComponent implements OnInit {
   public isCollapsed = true;
   public isCollapsedSecond = false;
   heart = true;
-  dateTime = new Date;
+  dateTime = new Date();
   productionCompanyIcon: any;
   iconCompany: any;
   nextEpisodeDate: any;
   movie;
   id;
-  addMovie(movie){
-    this.add.addToCart(movie)
+  genre: any;
+  addMovie(movie) {
+    this.add.addToCart(movie);
   }
-  constructor(private rote: ActivatedRoute,
-     private service: ServicesService,
-     private add: AddMovieService) {
-  }
+  constructor(
+    private rote: ActivatedRoute,
+    private service: ServicesService,
+    private add: AddMovieService
+  ) {}
   ngOnInit(): void {
     this.rote.params.subscribe((params: Params) => {
       this.service.getTvDetail(params.id).subscribe((item) => {
         this.tvItem = item;
-        this.id = this.tvItem.id
+        this.id = this.tvItem.id;
         this.title = this.tvItem.name;
         this.image = this.linkImage + this.tvItem.poster_path;
         this.date = this.tvItem.first_air_date;
@@ -96,21 +98,24 @@ export class DetailTvComponent implements OnInit {
         this.numberSeasons = this.tvItem.number_of_seasons;
         this.nextEpisode = this.tvItem.next_episode_to_air;
         this.seasons = this.tvItem.seasons;
+        this.genre = this.tvItem.genres;
+
         this.movie = {
-          type:'serial',
-          id:this.id,
-          name:this.title,
-          image:this.image,
-          date:this.date,
-          backdrop:this.backdrop,
-          overview:this.overview,
-          productionCoutry:this.productionCoutry,
-          productionCompany:this.productionCompany,
-          homepage:this.homepage,
-          spoken:this.spoken,
-          revenue:this.revenue,
-          vote:this.vote
-        }
+          type: 'serial',
+          id: this.id,
+          name: this.title,
+          image: this.image,
+          date: this.date,
+          backdrop: this.backdrop,
+          overview: this.overview,
+          productionCoutry: this.productionCoutry,
+          productionCompany: this.productionCompany,
+          homepage: this.homepage,
+          spoken: this.spoken,
+          revenue: this.revenue,
+          vote: this.vote,
+          genre: this.genre,
+        };
         this.seasons.forEach((item) => {
           this.seasonsDate = item.air_date;
           this.seasonsEpisode = item.episode_count;
@@ -121,7 +126,7 @@ export class DetailTvComponent implements OnInit {
             image: this.seasonsPoster,
             date: this.seasonsDate,
             episode: this.seasonsEpisode,
-            id:this.seasonsId
+            id: this.seasonsId,
           });
         });
       });

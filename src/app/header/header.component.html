@@ -12,10 +12,8 @@
   <ngb-carousel class="carousel">
     <ng-template ngbSlide *ngFor="let item of movieAraay">
       <div class="imagePoster">
-
         <img [src]='item.image' alt="">
         <button [routerLink]="['/movie',item.id]">Watch</button>
-
       </div>
       <div class="description">
         <div class="title_name">{{item.title}}</div>

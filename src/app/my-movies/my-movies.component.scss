@@ -1,19 +1,47 @@
-.main{
+.main {
   width: 90%;
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  .empty{
+
+  .empty {
     width: 100px;
   }
-  .movies{
+
+  .movies {
+    .movie {
+      padding: 5px;
+      transition: 1s;
+      text-align: center;
+
+      i {
+        color: red;
+        font-size: 20px;
+      }
+
+    }
+
+    .dateAdd {
+      opacity: 0.5;
+      font-size: 12px;
+    }
+
     width: 100%;
     display: flex;
-    .movie{
+
+    .movie {
       margin: 5px;
-      img{
+
+      img {
         width: 200px;
       }
     }
   }
+}
+
+.movie:hover {
+  border-radius: 5px;
+  color: #ffffff;
+  transition: 1s;
+  background-color: rgba(10, 209, 126, 0.425);
 }

@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArrayName } from '@angular/forms';
 import { AddMovieService } from '../add-movie.service';
 
 @Component({
   selector: 'app-my-movies',
   templateUrl: './my-movies.component.html',
-  styleUrls: ['./my-movies.component.scss']
+  styleUrls: ['./my-movies.component.scss'],
 })
 export class MyMoviesComponent implements OnInit {
-  arrayMovie = []
-  array1 = []
-  removeItem;
-  constructor(private array: AddMovieService) { }
-  remove(id){
-    this.arrayMovie = this.arrayMovie.filter(item=>{
-      return item.id !== id
-    })
-    return this.arrayMovie
+  arrayMovie = [];
+  index: number;
+
+  constructor(private array: AddMovieService) {}
+  remove(id) {
+    this.index = this.arrayMovie.findIndex((item) => {
+      return item.id === id;
+    });
+    return this.arrayMovie.splice(this.index, 1);
   }
   ngOnInit(): void {
-   this.arrayMovie = this.array.getItems()
-   console.log(this.arrayMovie);
-
+    this.arrayMovie = this.array.getItems();
   }
-
 }

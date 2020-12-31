@@ -97,10 +97,6 @@ ngb-carousel {
     flex-direction: column;
     justify-content: space-around;
 
-    button {
-
-    }
-
     .overview {
       color: aliceblue;
       border: 1px solid rgba(255, 255, 255, 0.507);
@@ -141,19 +137,22 @@ ngb-carousel {
 .imagePoster {
   display: flex;
   flex-direction: column;
+
   img {
     width: 300px;
     height: 400px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px black;
   }
-  button{
+
+  button {
     outline: none;
     border: none;
     border-radius: 10px;
     margin-bottom: 10px;
     text-transform: uppercase;
   }
+
   position: absolute;
   z-index: 5;
   right: 50px;
