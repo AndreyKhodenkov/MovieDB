@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { DetailTvComponent } from './detail-serial/detail-tv.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'tv-detail/:id',component:DetailTvComponent},
   {path:'movies',component:MoviesComponent},
   {path:'tv',component:SerialsComponent},
-  {path:'my-movie',component:MyMoviesComponent}
+  {path:'my-movie',component:MyMoviesComponent},
+  {path:'about-person/:id',component:DetailPersonComponent}
 ];
 
 @NgModule({

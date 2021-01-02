@@ -69,4 +69,7 @@ export class ServicesService {
       `https://api.themoviedb.org/3/discover/tv?api_key=${this.apiKey}&language=en-US&sort_by=popularity.desc&page=${count}&timezone=America%2FNew_York&include_null_first_air_dates=false`
     );
   }
+  getAboutPerson(id){
+      return this.http.get(`https://api.themoviedb.org/3/person/${id}?api_key=${this.apiKey}&language=en-US`)
+  }
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AddMovieService } from '../add-movie.service';
-import { FilterService } from '../filter.service';
 import { ServicesService } from '../services.service';
 
 @Component({

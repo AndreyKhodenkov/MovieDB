@@ -12,7 +12,21 @@
   .active {
     background-color: rgb(1, 143, 112);
   }
-
+  .sort{
+    margin: 10px 0;
+    input{
+      margin: 0 5px;
+    }
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    button{
+      padding: 0 10px ;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+    }
+  }
   .genre_btn {
     width: 100%;
     justify-content: space-evenly;

@@ -62,7 +62,7 @@
     <h3>Most Popular Actors</h3>
     <div class="popular_actor">
       <div class="actor" *ngFor='let item of personArray'>
-        <img [src]='item.image' alt="">
+        <img [routerLink]="['/about-person',item.id]" [src]='item.image' alt="">
         <div class="name">{{item.name}}</div>
         <div class="popularity">
           <p>Popularity: {{item.popularity}}</p>

@@ -18,6 +18,7 @@ import { FindPipe } from './pipes/find.pipe';
 import { MyMoviesComponent } from './my-movies/my-movies.component';
 import { MyDatePipe } from './pipes/my-date.pipe';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
+import { GenderPipe } from './pipes/gender.pipe';
 
 
 
@@ -35,6 +36,7 @@ import { DetailPersonComponent } from './detail-person/detail-person.component';
     MyMoviesComponent,
     MyDatePipe,
     DetailPersonComponent,
+    GenderPipe,
   ],
   imports: [
     BrowserModule,
