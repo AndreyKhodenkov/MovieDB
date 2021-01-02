@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterService } from '../filter.service';
 import { ServicesService } from '../services.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ServicesService } from '../services.service';
 export class SerialsComponent implements OnInit {
   itemGenre: any;
   genreId: any;
-  constructor(private api: ServicesService) {}
+  constructor(private api: ServicesService,private filter: FilterService) {}
   search = '';
   genre: any;
   linkImage = 'https://image.tmdb.org/t/p/original/';
@@ -30,19 +31,14 @@ export class SerialsComponent implements OnInit {
   year;
   filterTootgle = true;
   filterArray = [];
-  sortRate(sort) {
-    if (sort) {
-      return this.movieArray.sort((a, b) => (a.vote > b.vote ? 1 : -1));
-    }
-    return this.movieArray.sort((a, b) => (a.vote > b.vote ? -1 : 1));
-  }
-  sortDate(value) {
-    if (value) {
-      return this.movieArray.sort((a, b) => (a.year > b.year ? 1 : -1));
-    }
-    return this.movieArray.sort((a, b) => (a.year > b.year ? -1 : 1));
+  pages = 100;
+  sortRate(sort){
+    this.filter.sortRate(sort,this.movieArray)
   }
 
+  sortDate(value) {
+    this.filter.sortDate(value,this.movieArray)
+  }
   filterGenre(id) {
     if (this.filterTootgle) {
       this.movieArray = this.movieArray.filter((item) => item.genre === id);
@@ -56,7 +52,7 @@ export class SerialsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.filterArray = this.movieArray;
-    for (let i = 1; i < 140; i++) {
+    for (let i = 1; i < this.pages; i++) {
       this.api.getDiscoverTv(i).subscribe((item) => {
         console.log(item);
         this.movieItem = item;

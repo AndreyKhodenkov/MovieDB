@@ -15,7 +15,7 @@
     <div class="genre_btn">
       <div class="genre" *ngFor='let item of genre'>
         <button class="filter" (click)='filterGenre(item.id)'
-          (click)='filterTootgle = !filterTootgle'>{{item.name}}</button>
+          (click)='filterToogle = !filterToogle'>{{item.name}}</button>
       </div>
     </div>
     <div class="movie" *ngFor='let item of movieArray|find:search|slice:(page-1)*pageSize:page*pageSize'>

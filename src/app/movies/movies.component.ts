@@ -31,33 +31,29 @@ export class MoviesComponent implements OnInit {
   pageSize;
   year;
   filterArray = [];
-  filterTootgle = true;
-  sortRate(sort) {
-    if (sort) {
-      return this.movieArray.sort((a, b) => (a.vote > b.vote ? 1 : -1));
-    }
-    return this.movieArray.sort((a, b) => (a.vote > b.vote ? -1 : 1));
+  filterToogle = false;
+  pages = 100;
+  sortRate(sort){
+    this.filter.sortRate(sort,this.movieArray)
   }
   sortDate(value) {
-    if (value) {
-      return this.movieArray.sort((a, b) => (a.year > b.year ? 1 : -1));
-    }
-    return this.movieArray.sort((a, b) => (a.year > b.year ? -1 : 1));
+    this.filter.sortDate(value,this.movieArray)
   }
+
   filterGenre(id) {
-    if (this.filterTootgle) {
+    if (this.filterToogle) {
       this.movieArray = this.movieArray.filter((item) => item.genre === id);
       return this.movieArray;
     }
-    if (!this.filterTootgle) {
+    if (!this.filterToogle) {
       this.movieArray = this.filterArray;
-      this.filterTootgle = false;
+      this.filterToogle = false;
       return this.movieArray;
     }
   }
   ngOnInit(): void {
     this.filterArray = this.movieArray;
-    for (let i = 1; i < 140; i++) {
+    for (let i = 1; i < this.pages; i++) {
       this.api.getDiscoverMovies(i).subscribe((item) => {
         this.movieItem = item;
         this.movieResults = this.movieItem.results;
