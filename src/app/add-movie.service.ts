@@ -17,9 +17,4 @@ export class AddMovieService {
   getItems() {
     return this.movies;
   }
-
-  clearCart() {
-    this.movies = [];
-    return this.movies;
-  }
 }

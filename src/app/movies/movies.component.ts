@@ -33,7 +33,8 @@ export class MoviesComponent implements OnInit {
   filterArray = [];
   filterToogle = false;
   pages = 100;
-
+  firstYear = 2020;
+  secondYear = 2020;
   sortRate(sort){
     this.filter.sortRate(sort,this.movieArray)
   }
@@ -44,6 +45,15 @@ export class MoviesComponent implements OnInit {
       this.movieArray = this.filterArray;
       this.movieArray = this.movieArray.filter((item) => item.genre === id);
       return this.movieArray;
+  }
+  filterYear(){
+    if(this.firstYear > this.secondYear){
+      this.firstYear = 2020;
+      this.secondYear = 2020;
+    }
+    this.movieArray = this.filterArray;
+    this.movieArray = this.filter.findYear(this.firstYear,this.secondYear,this.movieArray)
+    return this.movieArray;
   }
   ngOnInit(): void {
     this.filterArray = this.movieArray;

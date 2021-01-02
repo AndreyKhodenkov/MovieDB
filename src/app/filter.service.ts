@@ -18,4 +18,7 @@ export class FilterService {
     }
     return movieArray.sort((a, b) => (a.year > b.year ? -1 : 1));
   }
+  findYear(first,second,array){
+    return array = array.filter(item=>item.year >= first && item.year <= second)
+  }
 }

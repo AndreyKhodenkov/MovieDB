@@ -10,7 +10,9 @@
       <button ngbDropdownItem (click)='sortDate(1)'>Min Date</button>
       <button ngbDropdownItem (click)='sortDate(0)'>Max Date</button>
     </div>
-
+    <input type="number" [value]='firstYear' [(ngModel)]='firstYear'>
+    <input type="number" [value]='secondYear' [(ngModel)]='secondYear'>
+    <button (click)='filterYear()'>Find</button>
     <div class="movies">
       <div class="genre_btn">
         <div class="genre" *ngFor='let item of genre'>

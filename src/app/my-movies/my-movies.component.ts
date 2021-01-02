@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArrayName } from '@angular/forms';
 import { AddMovieService } from '../add-movie.service';
 
 @Component({
