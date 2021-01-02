@@ -14,11 +14,11 @@ import { JwPaginationModule } from 'jw-angular-pagination';
 import { FormsModule } from '@angular/forms';
 import { SerialsComponent } from './serials/serials.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FindPipe } from './pipes/find.pipe';
+import { FindPipe } from './find.pipe';
 import { MyMoviesComponent } from './my-movies/my-movies.component';
-import { MyDatePipe } from './pipes/my-date.pipe';
+import { MyDatePipe } from './my-date.pipe';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
-import { GenderPipe } from './pipes/gender.pipe';
+import { GenderPipe } from './gender.pipe';
 
 
 
@@ -37,6 +37,7 @@ import { GenderPipe } from './pipes/gender.pipe';
     MyDatePipe,
     DetailPersonComponent,
     GenderPipe,
+
   ],
   imports: [
     BrowserModule,

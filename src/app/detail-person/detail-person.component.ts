@@ -26,7 +26,7 @@ export class DetailPersonComponent implements OnInit {
         this.biography =this.item.biography
         this.name =this.item.name
         this.birthday =this.item.birthday
-        this.gender =this.item.gender
+        this.gender = this.item.gender
         this.job =this.item.known_for_department
         this.photo = this.linkImage +this.item.profile_path
         this.popularity =this.item.popularity
@@ -34,12 +34,12 @@ export class DetailPersonComponent implements OnInit {
           name: this.name,
           biography:this.biography,
           birthday:this.birthday,
-          gender:this.gender,
+          gen:this.gender,
           job:this.job,
           photo:this.photo,
           popularity:this.popularity
         }
-        console.log(this.person);
+        console.log(this.person.gen);
       });
     });
   }

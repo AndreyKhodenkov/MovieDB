@@ -5,8 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class GenderPipe implements PipeTransform {
 
-  transform(value: number) {
+  transform(value: number):string {
     return value === 1?'Woman':'Men'
   }
 
 }
+
