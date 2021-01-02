@@ -39,16 +39,11 @@ export class SerialsComponent implements OnInit {
   sortDate(value) {
     this.filter.sortDate(value,this.movieArray)
   }
-  filterGenre(id) {
-    if (this.filterTootgle) {
+    filterGenre(id) {
+      this.movieArray = this.filterArray;
       this.movieArray = this.movieArray.filter((item) => item.genre === id);
       return this.movieArray;
-    }
-    if (!this.filterTootgle) {
-      this.movieArray = this.filterArray;
-      this.filterTootgle = false;
-      return this.movieArray;
-    }
+
   }
   ngOnInit(): void {
     this.filterArray = this.movieArray;

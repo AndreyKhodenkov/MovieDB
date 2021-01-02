@@ -33,23 +33,17 @@ export class MoviesComponent implements OnInit {
   filterArray = [];
   filterToogle = false;
   pages = 100;
+
   sortRate(sort){
     this.filter.sortRate(sort,this.movieArray)
   }
   sortDate(value) {
     this.filter.sortDate(value,this.movieArray)
   }
-
   filterGenre(id) {
-    if (this.filterToogle) {
+      this.movieArray = this.filterArray;
       this.movieArray = this.movieArray.filter((item) => item.genre === id);
       return this.movieArray;
-    }
-    if (!this.filterToogle) {
-      this.movieArray = this.filterArray;
-      this.filterToogle = false;
-      return this.movieArray;
-    }
   }
   ngOnInit(): void {
     this.filterArray = this.movieArray;

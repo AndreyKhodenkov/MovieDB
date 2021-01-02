@@ -62,6 +62,8 @@ export class MainPageComponent implements OnInit {
       this.item = item;
       this.result = this.item.results;
       this.result.forEach((element) => {
+        console.log(element);
+
         this.name = element.name;
         this.popularity = Math.floor(element.popularity * 1000);
         this.movies = element.known_for;
@@ -74,7 +76,6 @@ export class MainPageComponent implements OnInit {
           movie: this.movies,
           id: this.personId,
         });
-        this.personArray.splice(9, 10);
       });
     });
     this.apiLink.getApiNowPlaying().subscribe((item) => {

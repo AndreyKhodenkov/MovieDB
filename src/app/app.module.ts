@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FindPipe } from './pipes/find.pipe';
 import { MyMoviesComponent } from './my-movies/my-movies.component';
 import { MyDatePipe } from './pipes/my-date.pipe';
+import { DetailPersonComponent } from './detail-person/detail-person.component';
 
 
 
@@ -33,6 +34,7 @@ import { MyDatePipe } from './pipes/my-date.pipe';
     FindPipe,
     MyMoviesComponent,
     MyDatePipe,
+    DetailPersonComponent,
   ],
   imports: [
     BrowserModule,
