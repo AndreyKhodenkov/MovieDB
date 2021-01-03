@@ -1,0 +1,25 @@
+.main{
+  width: 90%;
+  margin: 30px auto;
+  .person{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    .description{
+      color: rgba(0, 0, 0, 0.678);
+      div{
+        border-bottom: 1px solid;
+      }
+      padding: 5px;
+      width: 550px;
+      border: 1px solid;
+      .name{
+        text-align: center;
+        font-size: 22px;
+      }
+    }
+    img{
+      width: 450px;
+    }
+  }
+}

@@ -19,6 +19,12 @@ import { MyMoviesComponent } from './my-movies/my-movies.component';
 import { MyDatePipe } from './my-date.pipe';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { GenderPipe } from './gender.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { TodayPlayComponent } from './today-play/today-play.component';
+
+
+
 
 
 
@@ -37,6 +43,7 @@ import { GenderPipe } from './gender.pipe';
     MyDatePipe,
     DetailPersonComponent,
     GenderPipe,
+    TodayPlayComponent,
 
   ],
   imports: [
@@ -46,7 +53,9 @@ import { GenderPipe } from './gender.pipe';
     YouTubePlayerModule,
     JwPaginationModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
     ],
   providers: [],
   bootstrap: [AppComponent]

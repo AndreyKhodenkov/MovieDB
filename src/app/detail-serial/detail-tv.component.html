@@ -12,7 +12,7 @@
       </div>
       <div class="title">{{title}}</div>
       <div class="anoter">
-        <div class="date">Date Release:<span> {{date}}</span></div>
+        <div class="date">Date Release:<span> {{date|myDate}}</span></div>
         <div class="genre">
           Genres: <span *ngFor='let item of genre'>{{item.name}} </span>
         </div>

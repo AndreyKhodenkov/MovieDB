@@ -1,5 +1,18 @@
 <div class="main">
   <div class="person">
-    {{gender|gender}}
+    <div class="image">
+      <img [src]='photo' alt="">
+    </div>
+    <div class="description">
+ <div class="name">{{name}}</div>
+    <div class="date">{{birthday|myDate}}</div>
+    <div class="job">{{job}}</div>
+    <div class="popular">{{popularity}}</div>
+    <div class="biography">{{biography}}</div>
+    <div class="gender2" *ngIf='gender === 2'>{{gender|gender}}<i class="fas fa-male"></i></div>
+    <div class="gender1" *ngIf='gender === 1'>{{gender|gender}}<i class="fas fa-female"></i></div>
+    </div>
   </div>
 </div>
+
+

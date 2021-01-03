@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ServicesService } from '../services.service';
+
+
 
 @Component({
   selector: 'app-detail-person',
@@ -8,6 +12,9 @@ import { ServicesService } from '../services.service';
   styleUrls: ['./detail-person.component.scss'],
 })
 export class DetailPersonComponent implements OnInit {
+  color: ThemePalette = 'warn';
+  mode: ProgressSpinnerMode = 'determinate';
+  value;
   constructor(private http: ServicesService, private route: ActivatedRoute) {}
   linkImage = 'https://image.tmdb.org/t/p/original/';
   item;
@@ -39,7 +46,7 @@ export class DetailPersonComponent implements OnInit {
           photo:this.photo,
           popularity:this.popularity
         }
-        console.log(this.person.gen);
+        console.log(item);
       });
     });
   }

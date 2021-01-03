@@ -2,8 +2,16 @@
   <div class="input">
     <input type="text" [(ngModel)]='search' placeholder="find movie">
   </div>
-    <div ngbDropdown class="d-inline-block">
-      <div class="sort">
+
+  <div ngbDropdown class="d-inline-block">
+
+    <div class="sort">
+<button class="onAir" (click)='showToday = !showToday'>On Air Today</button>
+    <app-today-play
+    *ngIf='showToday'
+    class="today"
+    >
+  </app-today-play>
       <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Sort</button>
       <div ngbDropdownMenu aria-labelledby="dropdownBasic1" id="btn">
         <button ngbDropdownItem (click)='sortRate(1)'>Min Rate</button>
@@ -14,12 +22,12 @@
       <input type="number" [value]='firstYear' [(ngModel)]='firstYear'>
       <input type="number" [value]='secondYear' [(ngModel)]='secondYear'>
       <button (click)='filterYear()'>Find</button>
-      </div>
-      <div class="movies">
-        <div class="genre_btn">
-          <div class="genre" *ngFor='let item of genre'>
+    </div>
+    <div class="movies">
+      <div class="genre_btn">
+        <div class="genre" *ngFor='let item of genre'>
           <button class="filter" (click)='filterGenre(item.id)'
-            (click)='filterTootgle = !filterTootgle'>{{item.name}}</button>
+          (click)='filterTootgle = !filterTootgle'>{{item.name}}</button>
         </div>
       </div>
       <div class="movie" *ngFor='let item of movieArray|find:search|slice:(page-1)*pageSize:page*pageSize'>

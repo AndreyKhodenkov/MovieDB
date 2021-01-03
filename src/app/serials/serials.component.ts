@@ -34,6 +34,7 @@ export class SerialsComponent implements OnInit {
   filterTootgle = true;
   filterArray = [];
   pages = 100;
+  showToday = false;
   sortRate(sort){
     this.filter.sortRate(sort,this.movieArray)
   }
@@ -59,7 +60,6 @@ export class SerialsComponent implements OnInit {
     this.filterArray = this.movieArray;
     for (let i = 1; i < this.pages; i++) {
       this.api.getDiscoverTv(i).subscribe((item) => {
-        console.log(item);
         this.movieItem = item;
         this.movieResults = this.movieItem.results;
         this.movieResults.forEach((element) => {

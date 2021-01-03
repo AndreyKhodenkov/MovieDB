@@ -72,4 +72,7 @@ export class ServicesService {
   getAboutPerson(id){
       return this.http.get(`https://api.themoviedb.org/3/person/${id}?api_key=${this.apiKey}&language=en-US`)
   }
+  getTvToday(page){
+    return this.http.get(`https://api.themoviedb.org/3/tv/airing_today?api_key=${this.apiKey}&language=en-US&page=${page}`)
+  }
 }

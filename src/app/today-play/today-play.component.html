@@ -1,0 +1,5 @@
+<div class="main" *ngFor='let item of movies'>
+  <img [routerLink]="['/tv-detail',item.id]" *ngIf='mouse' [src]='item.image' alt="">
+  <a (mousemove)='mouse = !mouse '>{{item.name}}</a>
+  <div class="vote">{{item.vote}}</div>
+</div>
