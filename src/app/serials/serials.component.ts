@@ -12,7 +12,7 @@ export class SerialsComponent implements OnInit {
   genreId: any;
   firstYear = 2020;
   secondYear = 2020;
-  constructor(private api: ServicesService,private filter: FilterService) {}
+  constructor(private api: ServicesService, private filter: FilterService) {}
   search = '';
   genre: any;
   linkImage = 'https://image.tmdb.org/t/p/original/';
@@ -35,25 +35,29 @@ export class SerialsComponent implements OnInit {
   filterArray = [];
   pages = 100;
   showToday = false;
-  sortRate(sort){
-    this.filter.sortRate(sort,this.movieArray)
+  sortRate(sort) {
+    this.filter.sortRate(sort, this.movieArray);
   }
 
   sortDate(value) {
-    this.filter.sortDate(value,this.movieArray)
+    this.filter.sortDate(value, this.movieArray);
   }
-    filterGenre(id) {
-      this.movieArray = this.filterArray;
-      this.movieArray = this.movieArray.filter((item) => item.genre === id);
-      return this.movieArray;
+  filterGenre(id) {
+    this.movieArray = this.filterArray;
+    this.movieArray = this.movieArray.filter((item) => item.genre === id);
+    return this.movieArray;
   }
-  filterYear(){
-    if(this.firstYear > this.secondYear){
+  filterYear() {
+    if (this.firstYear > this.secondYear) {
       this.firstYear = 2020;
       this.secondYear = 2020;
     }
     this.movieArray = this.filterArray;
-    this.movieArray = this.filter.findYear(this.firstYear,this.secondYear,this.movieArray)
+    this.movieArray = this.filter.findYear(
+      this.firstYear,
+      this.secondYear,
+      this.movieArray
+    );
     return this.movieArray;
   }
   ngOnInit(): void {

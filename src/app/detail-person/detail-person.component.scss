@@ -1,24 +1,30 @@
-.main{
+.main {
   width: 90%;
   margin: 30px auto;
-  .person{
+
+  .person {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    .description{
+
+    .description {
       color: rgba(0, 0, 0, 0.678);
-      div{
+
+      div {
         border-bottom: 1px solid;
       }
+
       padding: 5px;
       width: 550px;
       border: 1px solid;
-      .name{
+
+      .name {
         text-align: center;
         font-size: 22px;
       }
     }
-    img{
+
+    img {
       width: 450px;
     }
   }

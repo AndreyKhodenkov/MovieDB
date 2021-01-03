@@ -1,16 +1,19 @@
-.main{
-  img{
+.main {
+  img {
     width: 100px;
   }
+
   padding: 5px;
   display: flex;
   justify-content: space-between;
   background-color: rgba(25, 73, 75, 0.781);
-  a{
+
+  a {
     color: #ffffff;
     text-decoration: none;
   }
-  .vote{
+
+  .vote {
     color: yellow;
     margin-left: 10px;
   }

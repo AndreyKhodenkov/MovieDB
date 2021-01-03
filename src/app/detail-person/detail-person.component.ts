@@ -4,8 +4,6 @@ import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ServicesService } from '../services.service';
 
-
-
 @Component({
   selector: 'app-detail-person',
   templateUrl: './detail-person.component.html',
@@ -30,22 +28,22 @@ export class DetailPersonComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.http.getAboutPerson(params.id).subscribe((item) => {
         this.item = item;
-        this.biography =this.item.biography
-        this.name =this.item.name
-        this.birthday =this.item.birthday
-        this.gender = this.item.gender
-        this.job =this.item.known_for_department
-        this.photo = this.linkImage +this.item.profile_path
-        this.popularity =this.item.popularity
+        this.biography = this.item.biography;
+        this.name = this.item.name;
+        this.birthday = this.item.birthday;
+        this.gender = this.item.gender;
+        this.job = this.item.known_for_department;
+        this.photo = this.linkImage + this.item.profile_path;
+        this.popularity = this.item.popularity;
         this.person = {
           name: this.name,
-          biography:this.biography,
-          birthday:this.birthday,
-          gen:this.gender,
-          job:this.job,
-          photo:this.photo,
-          popularity:this.popularity
-        }
+          biography: this.biography,
+          birthday: this.birthday,
+          gen: this.gender,
+          job: this.job,
+          photo: this.photo,
+          popularity: this.popularity,
+        };
         console.log(item);
       });
     });

@@ -1,10 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import {
-  AfterContentInit,
-  Component,
-  ContentChild,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesService } from '../services.service';
 
@@ -62,8 +57,6 @@ export class MainPageComponent implements OnInit {
       this.item = item;
       this.result = this.item.results;
       this.result.forEach((element) => {
-        console.log(element);
-
         this.name = element.name;
         this.popularity = Math.floor(element.popularity * 1000);
         this.movies = element.known_for;
