@@ -11,7 +11,7 @@
     </div>
   </div>
   <ngb-carousel class="carousel">
-    <ng-template ngbSlide *ngFor="let item of movieAraay">
+    <ng-template ngbSlide *ngFor="let item of movieArray">
       <div class="imagePoster">
         <img [src]='item.image' alt="">
         <button [routerLink]="['/movie',item.id]">Watch</button>

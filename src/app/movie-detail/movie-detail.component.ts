@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AddMovieService } from '../movie.service';
-import { ServicesService } from '../services.service';
+import { ServicesService } from '../api-service.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -30,7 +30,7 @@ export class MovieDetailComponent implements OnInit {
   spoken;
   revenue;
   vote;
-  toogle = true;
+  toggle = true;
   heart = true;
   movie;
   dateTime = new Date();

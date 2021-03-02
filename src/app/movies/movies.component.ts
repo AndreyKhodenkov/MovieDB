@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from '../core/filter.service';
-import { ServicesService } from '../services.service';
+import { ServicesService } from '../api-service.service';
 
 @Component({
   selector: 'app-movies',
@@ -12,7 +12,6 @@ export class MoviesComponent implements OnInit {
   genre: any[];
   genreId;
   itemGenre;
-  func;
   constructor(private api: ServicesService, private filter: FilterService) {}
   linkImage = 'https://image.tmdb.org/t/p/original/';
   id: any;
@@ -26,12 +25,11 @@ export class MoviesComponent implements OnInit {
   movieItem;
   movieResults;
   element;
-  apigenre;
   page;
   pageSize;
   year;
   filterArray = [];
-  filterToogle = false;
+  filterToggle = false;
   pages = 100;
   firstYear = 2020;
   secondYear = 2020;

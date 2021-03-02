@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterService } from '../core/filter.service';
-import { ServicesService } from '../services.service';
+import { ServicesService } from '../api-service.service';
 
 @Component({
   selector: 'app-serials',

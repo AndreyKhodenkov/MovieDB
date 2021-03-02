@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ServicesService } from '../services.service';
+import { ServicesService } from '../api-service.service';
 
 @Component({
   selector: 'app-detail-person',
@@ -44,7 +44,6 @@ export class DetailPersonComponent implements OnInit {
           photo: this.photo,
           popularity: this.popularity,
         };
-        console.log(item);
       });
     });
   }

@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { CalendarOptions } from '@fullcalendar/angular';
-import { NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
-import { textSpanIntersectsWithPosition } from 'typescript';
 import { AddMovieService } from '../movie.service';
-import { ServicesService } from '../services.service';
+import { ServicesService } from '../api-service.service';
 
 @Component({
   selector: 'app-detail-tv',
@@ -14,12 +11,8 @@ import { ServicesService } from '../services.service';
 export class DetailTvComponent implements OnInit {
   linkYouTube = 'https://www.youtube.com/embed/';
   linkImage = 'https://image.tmdb.org/t/p/original/';
-  trailerResults;
-  itemTrailer;
-  tralerLinkArray;
   trailerKey;
   linkTrailer;
-  videoUrl;
   tvItem;
   title;
   image;
@@ -32,7 +25,7 @@ export class DetailTvComponent implements OnInit {
   spoken;
   revenue;
   vote;
-  toogle = true;
+  toggle = true;
   runTime;
   lastEpisode;
   lastEpisodeName;
@@ -42,7 +35,6 @@ export class DetailTvComponent implements OnInit {
   airDate;
   numberEpisode;
   numberSeasons;
-  productianCompany = [];
   nextEpisode;
   seasons = [];
   seasonsPoster;
@@ -99,7 +91,6 @@ export class DetailTvComponent implements OnInit {
         this.nextEpisode = this.tvItem.next_episode_to_air;
         this.seasons = this.tvItem.seasons;
         this.genre = this.tvItem.genres;
-
         this.movie = {
           type: 'serial',
           id: this.id,

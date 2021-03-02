@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
-import { ServicesService } from '../services.service';
+import { ServicesService } from '../api-service.service';
 
 @Component({
   selector: 'app-main-page',
@@ -17,7 +17,6 @@ export class MainPageComponent implements OnInit {
   movies = [];
   image;
   linkImage = 'https://image.tmdb.org/t/p/original/';
-  arrayPersonMovie = [];
   titleMovie;
   posterMovie;
   personId;
@@ -36,14 +35,14 @@ export class MainPageComponent implements OnInit {
   tvVote;
   tvArray = [];
   toogle = true;
-  trandDayItem;
-  trandDayResults;
-  trandDayElement;
-  trandDayArray = [];
-  trandWeekItem;
-  trandWeekResults;
-  trandWeekElement;
-  trandWeekArray = [];
+  trendDayItem;
+  trendDayResults;
+  trendDayElement;
+  trendDayArray = [];
+  trendWeekItem;
+  trendWeekResults;
+  trendWeekElement;
+  trendWeekArray = [];
   constructor(
     private apiLink: ServicesService,
     private http: HttpClient,
@@ -103,20 +102,20 @@ export class MainPageComponent implements OnInit {
         });
       });
     });
-    this.apiLink.getTrandingDay().subscribe((item) => {
-      this.trandDayItem = item;
-      this.trandDayResults = this.trandDayItem.results;
-      this.trandDayResults.forEach((element) => {
-        this.trandDayElement = element;
-        this.trandDayArray.push(this.trandDayElement);
+    this.apiLink.getTrendingDay().subscribe((item) => {
+      this.trendDayItem = item;
+      this.trendDayResults = this.trendDayItem.results;
+      this.trendDayResults.forEach((element) => {
+        this.trendDayElement = element;
+        this.trendDayArray.push(this.trendDayElement);
       });
     });
-    this.apiLink.getTrandingWeek().subscribe((item) => {
-      this.trandWeekItem = item;
-      this.trandWeekResults = this.trandWeekItem.results;
-      this.trandWeekResults.forEach((element) => {
-        this.trandWeekElement = element;
-        this.trandWeekArray.push(this.trandWeekElement);
+    this.apiLink.getTrendingWeek().subscribe((item) => {
+      this.trendWeekItem = item;
+      this.trendWeekResults = this.trendWeekItem.results;
+      this.trendWeekResults.forEach((element) => {
+        this.trendWeekElement = element;
+        this.trendWeekArray.push(this.trendWeekElement);
       });
     });
   }

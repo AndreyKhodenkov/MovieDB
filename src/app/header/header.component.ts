@@ -1,23 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbCarousel, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { ServicesService } from '../services.service';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { ServicesService } from '../api-service.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  link;
+export class HeaderComponent implements OnInit{
   resultsMovie;
   itemLinkMovie;
-  movieAraay = [];
+  movieArray = [];
   title;
   poster;
   linkPoster = 'https://image.tmdb.org/t/p/original/';
-  imagePoter = [];
   overview;
-
   releaseDate;
   popularity;
   voteAverage;
@@ -47,7 +44,7 @@ export class HeaderComponent {
         this.id = element.id;
         this.backgroundImage = this.linkPoster + this.poster;
         this.image = this.linkPoster + element.poster_path;
-        this.movieAraay.push({
+        this.movieArray.push({
           title: this.title,
           poster: this.linkPoster + this.poster,
           overview: this.overview,

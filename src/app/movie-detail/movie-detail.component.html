@@ -12,7 +12,7 @@
         <i *ngIf='!heart' class="fas fa-heart fa-3x"></i>
       </div>
       <div class="title">{{title}}</div>
-      <div class="anoter">
+      <div class="another">
         <div class="date">Date Release:<span> {{date|myDate}}</span></div>
         <div class="genre">
           Genres: <span *ngFor='let item of genre'>{{item.name}} </span>
@@ -23,17 +23,17 @@
         <div class="spoken">Spoken:<span> {{spoken}}</span></div>
         <div class="revenue" *ngIf='revenue > 0'>Revenue:<span> {{revenue}}$</span></div>
         <div class="vote">Vote: <span>{{vote}}</span></div>
-        <div class="overvew">Overvew:<span> {{overview}}</span></div>
+        <div class="overvew">Overview:<span> {{overview}}</span></div>
       </div>
-      <button (click)='toogle = !toogle'>Trailer</button>
+      <button (click)='toggle = !toggle'>Trailer</button>
     </div>
   </div>
   <div class="bottom">
     <img [src]='backdrop' alt="">
   </div>
-  <div class="trailer" *ngIf='!toogle'>
+  <div class="trailer" *ngIf='!toggle'>
     <div class="video">
-      <i class="fas fa-window-close" (click)='toogle = !toogle'></i>
+      <i class="fas fa-window-close" (click)='toggle = !toggle'></i>
       <youtube-player videoId={{trailerKey}} suggestedQuality="highres" [height]="400" [width]="700">
       </youtube-player>
     </div>
