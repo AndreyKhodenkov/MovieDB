@@ -10,10 +10,6 @@ export class AddMovieService {
   addToCart(movie) {
     this.movies.push(movie);
   }
-  deleteMovie(movie){
-    this.index = this.movies.indexOf(movie.id)
-    this.movies.slice(this.index,1)
-  }
   getItems() {
     return this.movies;
   }

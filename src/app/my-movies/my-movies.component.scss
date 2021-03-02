@@ -3,6 +3,8 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  width: 100%;
+  display: flex;
 
   .empty {
     width: 100px;
@@ -26,8 +28,6 @@
       font-size: 12px;
     }
 
-    width: 100%;
-    display: flex;
 
     .movie {
       margin: 5px;

@@ -8,10 +8,10 @@ import { SerialsComponent } from './serials/serials.component';
 import { MyMoviesComponent } from './my-movies/my-movies.component';
 import { DetailPersonComponent } from './detail-person/detail-person.component';
 import { TodayPlayComponent } from './today-play/today-play.component';
-import { ColorDirective } from './color.directive';
-import { GenderPipe } from './gender.pipe';
-import { MyDatePipe } from './my-date.pipe';
-import { FindPipe } from './find.pipe';
+import { ColorDirective } from './core/color.directive';
+import { GenderPipe } from './core/gender.pipe';
+import { MyDatePipe } from './core/format-date.pipe';
+import { FindPipe } from './core/find.pipe';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -24,10 +24,6 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { YouTubePlayerModule } from '@angular/youtube-player';
-
-
-
-
 
 
 @NgModule({
@@ -45,8 +41,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     MyDatePipe,
     DetailPersonComponent,
     GenderPipe,
-    TodayPlayComponent,
-
+    TodayPlayComponent
   ],
   imports: [
     BrowserModule,

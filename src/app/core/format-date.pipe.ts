@@ -9,6 +9,5 @@ export class MyDatePipe implements PipeTransform {
       value = value.split('-').reverse().join('.');
       return value;
     }
-
   }
 }

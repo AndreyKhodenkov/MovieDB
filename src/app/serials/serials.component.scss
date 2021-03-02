@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
 
 .main {
-  .genre_btn button {
-    padding: 0 5px;
-    border-radius: 5px;
-    outline: red;
-    border: 1px solid rgb(1, 143, 112);
-    background-color: #ffffff;
+  .genre_btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    button {
+      padding: 0 5px;
+      border-radius: 5px;
+      outline: red;
+      border: 1px solid rgb(1, 143, 112);
+      background-color: #ffffff;
+    }
   }
+
+
 
   .today {
     height: 500px;
@@ -84,7 +92,6 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          position: absolute;
           top: 10px;
           right: 10px;
           background-color: rgb(255, 255, 255);

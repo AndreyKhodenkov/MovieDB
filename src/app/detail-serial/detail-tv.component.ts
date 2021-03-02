@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { CalendarOptions } from '@fullcalendar/angular';
 import { NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { textSpanIntersectsWithPosition } from 'typescript';
-import { AddMovieService } from '../add-movie.service';
+import { AddMovieService } from '../movie.service';
 import { ServicesService } from '../services.service';
 
 @Component({

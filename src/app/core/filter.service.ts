@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class FilterService {
   constructor() { }
-  filterArray = [];
   sortRate(sort,movieArray) {
     if (sort) {
       return movieArray.sort((a, b) => (a.vote > b.vote ? 1 : -1));
@@ -19,6 +18,6 @@ export class FilterService {
     return movieArray.sort((a, b) => (a.year > b.year ? -1 : 1));
   }
   findYear(first,second,array){
-    return array = array.filter(item=>item.year >= first && item.year <= second)
+    return array.filter(item=>item.year >= first && item.year <= second)
   }
 }
