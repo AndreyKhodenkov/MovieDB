@@ -15,7 +15,7 @@ export class DetailPersonComponent implements OnInit {
   value;
   constructor(private http: ServicesService, private route: ActivatedRoute) {}
   linkImage = 'https://image.tmdb.org/t/p/original/';
-  item;
+  public item;
   biography;
   name;
   birthday;
